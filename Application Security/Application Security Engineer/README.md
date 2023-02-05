@@ -3,7 +3,6 @@
 ## Must have
 
 ### Table of contents
-=====================
 
 * [Architecture and working principles of modern web applications](#architecture-and-working-principles-of-modern-web-applications)
 * [Basic concepts of information security](#basic-concepts-of-information-security)
