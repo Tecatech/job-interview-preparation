@@ -1,2 +1,1 @@
-# job-interview-preparation
-Job interview preparation
+# Job interview preparation
