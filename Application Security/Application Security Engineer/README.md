@@ -43,6 +43,23 @@
       * [Explicit dependencies principle](#explicit-dependencies-principle)
       * [Persistence Ignorance](#persistence-ignorance)
       * [Bounded context](#bounded-context)
+* [Basic concepts of information security](#basic-concepts-of-information-security)
+   * [Overview](#overview)
+   * [Core principles](#core-principles)
+      * [Confidentiality](#confidentiality)
+      * [Integrity](#integrity)
+      * [Availability](#availability)
+   * [Information Security Policy](#information-security-policy)
+   * [Threat intelligence](#threat-intelligence)
+      * [Poorly secured systems](#poorly-secured-systems)
+      * [Social media attacks](#social-media-attacks)
+      * [Social engineering](#social-engineering)
+      * [Malware on endpoints](#malware-on-endpoints)
+      * [Lack of encryption](#lack-of-encryption)
+      * [Security misconfiguration](#security-misconfiguration)
+   * [Active and passive attacks](#active-and-passive-attacks)
+      * [Active attack](#active-attack)
+      * [Passive attack](#passive-attack)
 
 ## Architecture and working principles of modern web applications
 
@@ -350,3 +367,101 @@ The principle of Persistence Ignorance (PI) holds that classes modeling the busi
 #### Bounded context
 
 Bounded context is a central pattern in Domain-Driven Design. It is the focus of DDD-strategic design section, which is all about dealing with large models and teams. Domain-Driven Design deals with large models by dividing them into different bounded contexts and being explicit about their interrelationships.
+
+## Basic concepts of information security
+
+### Overview
+
+Information security covers tools and processes that organizations use to protect information. This includes policy settings that prevent unauthorized people from accessing business or personal information. InfoSec is a growing and evolving field that covers a wide range of fields, from network and infrastructure security to testing and auditing.
+
+Information security protects sensitive information from unauthorized activities, including inspection, modification, recording, and any disruption or destruction. The goal is to ensure safety and privacy of critical data such as customer account details, financial data or intellectual property.
+
+The consequences of security incidents include theft of private information, data tampering, and data deletion. Attacks can disrupt work processes and damage a company reputation, and also have a tangible cost.
+
+Organizations must allocate funds for security and ensure that they are ready to detect, respond to, and proactively prevent, attacks such as phishing, malware, viruses, malicious insiders, and ransomware.
+
+### Core principles
+
+Basic tenets of information security are confidentiality, integrity and availability. Every element of an information security program must be designed to implement one or more of these principles. Together they are called the CIA Triad.
+
+![alt text](https://github.com/Tecatech/job-interview-preparation/blob/main/Application%20Security/Application%20Security%20Engineer/images/cia_triad.svg)
+
+#### Confidentiality
+
+Confidentiality measures are designed to prevent unauthorized disclosure of information. The purpose of the confidentiality principle is to keep personal information private and to ensure that it is visible and accessible only to those individuals who own it or need it to perform their organizational functions.
+
+#### Integrity
+
+Consistency includes protection against unauthorized changes (additions, deletions, alterations) to data. The principle of integrity ensures that data is accurate and reliable and is not modified incorrectly, whether accidentally or maliciously.
+
+#### Availability
+
+Availability is protection of a system ability to make software systems and data fully available when a user needs it (or at a specified time). The purpose of availability is to make technology infrastructure, applications and data available when they are needed for organizational process or for organization customers.
+
+### Information Security Policy
+
+An Information Security Policy (ISP) is a set of rules that guide individuals when using IT assets. Companies can create information security policies to ensure that employees and other users follow security protocols and procedures. Security policies are intended to ensure that only authorized users can access sensitive systems and information.
+
+Creating an effective security policy and taking steps to ensure compliance is an important step towards preventing and mitigating security threats. To make your policy truly effective, update it frequently based on company changes, new threats, conclusions drawn from previous breaches, and changes to security systems and tools.
+
+Make your information security strategy practical and reasonable. To meet the needs and urgency of different departments within the organization, it is necessary to deploy a system of exceptions, with an approval process, enabling departments or individuals to deviate from rules in specific circumstances.
+
+### Threat intelligence
+
+There are hundreds of security threat categories and millions of known threat vectors. Below, we cover some of the key threats that are a priority for security teams at modern enterprises.
+
+#### Poorly secured systems
+
+The speed and technological development often leads to compromises in security measures. In other cases, systems are developed without security in mind, and remain in operation at an organization as legacy systems. Organizations must identify these poorly secured systems, and mitigate the threat by securing or patching them, decommissioning them, or isolating them.
+
+#### Social media attacks
+
+Many people have social media accounts, where they often unintentionally share a lot of information about themselves. Attackers can launch attacks directly via social media, for example by spreading malware via social media messages, or indirectly, by using information obtained from these sites to analyze user and organizational vulnerabilities, and use them to design an attack.
+
+#### Social engineering
+
+Social engineering involves attackers sending emails and messages that trick users into performing actions that may compromise their security or divulge private information. Attackers manipulate users using psychological triggers like curiosity, urgency or fear.
+
+Because the source of a social engineering message appears to be trusted, people are more likely to comply, for example by clicking a link that installs malware on their device, or by providing personal information, credentials, or financial details.
+
+Organizations can mitigate social engineering by making users aware of its dangers and training them to identify and avoid suspected social engineering messages. In addition, technological systems can be used to block social engineering at its source, or prevent users from performing dangerous actions such as clicking on unknown links or downloading unknown attachments.
+
+#### Malware on endpoints
+
+Organizational users work with a large variety of endpoint devices, including desktop computers, laptops, tablets, and mobile phones, many of which are privately owned and not under the organization control, and all of which connect regularly to the Internet.
+
+A primary threat on all these endpoints is malware, which can be transmitted by a variety of means, can result in compromise of the endpoint itself, and can also lead to privilege escalation to other organizational systems.
+
+Traditional antivirus software is insufficient to block all modern forms of malware, and more advanced approaches are developing to securing endpoints, such as Endpoint Detection and Response (EDR).
+
+#### Lack of encryption
+
+Encryption processes encrypts data so that it can only be decrypted by users with secret keys. It is very effective in preventing data loss or corruption in case of equipment loss or theft, or in case organizational systems are compromised by attackers.
+
+Unfortunately, this measure is often overlooked due to its complexity and lack of legal obligations associated with proper implementation. Organizations are increasingly adopting encryption, by purchasing storage devices or using cloud services that support encryption, or using dedicated security tools.
+
+#### Security misconfiguration
+
+Modern organizations use a huge number of technological platforms and tools, in particular web applications, databases, and Software as a Service (SaaS) applications, or Infrastructure as a Service (IaaS) from providers like Amazon Web Services.
+
+Enterprise grade platforms and cloud services have security features, but these must be configured by the organization. Security misconfiguration due to negligence or human error can result in a security breach. Another problem is «configuration drift», where correct security configuration can quickly become out of date and make a system vulnerable, unbeknownst to IT or security staff.
+
+Organizations can mitigate security misconfiguration using technological platforms that continuously monitor systems, identify configuration gaps, and alert or even automatically remediate configuration issues that make systems vulnerable.
+
+### Active and passive attacks
+
+Information security is intended to protect organizations against malicious attacks. There are two primary types of attacks: active and passive. Active attacks are considered more difficult to prevent, and the focus is on detecting, mitigating and recovering from them. Passive attacks are easier to prevent with strong security measures.
+
+#### Active attack
+
+An active attack involves intercepting a communication or message and altering it for malicious effect. There are three common variants of an active attacks:
+
+1. Interruption – attacker interrupts original communication and creates new, malicious messages, pretending to be one of the communicating parties.
+2. Modification – attacker uses existing communications, and either replays them to fool one of the communicating parties, or modifies them to gain an advantage.
+3. Fabrication – creates fake, or synthetic, communications, typically with the aim of achieving Denial of Service (DoS). This prevents users from accessing systems or performing normal operations.
+
+#### Passive attack
+
+In a passive attack, an attacker monitors a system and illicitly copies information without altering it. They then use this information to disrupt networks or compromise target systems.
+
+The attackers do not make any change to the communication or target systems. This makes it more difficult to detect. However, encryption can help prevent passive attacks because it obfuscates data, making it more difficult to for attackers to make use of it.
