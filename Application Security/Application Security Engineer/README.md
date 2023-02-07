@@ -196,6 +196,7 @@ As the name says, a load balancer is a service that balances traffic loads by di
 Load balancing can be done in two ways:
 
 1. TCP/IP level load balancing: load balancing based on the DNS.
+
 2. App-level load balancing: load balancing based on application load.
 
 #### Multiple servers
