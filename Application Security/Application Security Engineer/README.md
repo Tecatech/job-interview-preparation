@@ -384,8 +384,6 @@ Organizations must allocate funds for security and ensure that they are ready to
 
 Basic tenets of information security are confidentiality, integrity and availability. Every element of an information security program must be designed to implement one or more of these principles. Together they are called the CIA Triad.
 
-![alt text](https://github.com/Tecatech/job-interview-preparation/blob/main/Application%20Security/Application%20Security%20Engineer/images/cia_triad.svg)
-
 #### Confidentiality
 
 Confidentiality measures are designed to prevent unauthorized disclosure of information. The purpose of the confidentiality principle is to keep personal information private and to ensure that it is visible and accessible only to those individuals who own it or need it to perform their organizational functions.
