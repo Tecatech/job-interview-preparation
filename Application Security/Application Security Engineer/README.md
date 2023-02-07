@@ -382,7 +382,7 @@ Organizations must allocate funds for security and ensure that they are ready to
 
 ### Core principles
 
-Basic tenets of information security are confidentiality, integrity and availability. Every element of an information security program must be designed to implement one or more of these principles. Together they are called the CIA Triad.
+Basic tenets of information security are confidentiality, integrity and availability. Every element of an information security program must be designed to implement one or more of these principles. Together they are called the CIA triad.
 
 #### Confidentiality
 
