@@ -3,46 +3,46 @@
 ## Table of contents
 
 * [Architecture and working principles of modern web applications](#architecture-and-working-principles-of-modern-web-applications)
-      * [Overview](#overview)
-      * [Core components](#core-components)
-      * [Three-tier architecture](#three-tier-architecture)
-            * [Presentation layer: client-side component (front-end)](#presentation-layer-client-side-component-front-end)
-            * [Application layer: web server](#application-layer-web-server)
-            * [Application layer: server-side component (back-end)](#application-layer-server-side-component-back-end)
-            * [Application layer: Application Programming Interface (API)](#application-layer-application-programming-interface-api)
-            * [Application layer: cloud instance](#application-layer-cloud-instance)
-            * [Data layer: database](#data-layer-database)
-      * [Scalability](#scalability)
-            * [Caching system](#caching-system)
-            * [Cloud storage (Amazon S3)](#cloud-storage-amazon-s3)
-            * [CDN (CloudFront)](#cdn-cloudfront)
-            * [Load balancer](#load-balancer)
-            * [Multiple servers](#multiple-servers)
-      * [Types of web application architecture](#types-of-web-application-architecture)
-            * [Monolithic architecture](#monolithic-architecture)
-            * [Microservice architecture](#microservice-architecture)
-            * [Containers](#containers)
-            * [Serverless architecture](#serverless-architecture)
-            * [API gateway](#api-gateway)
-      * [Best practices](#best-practices)
-            * [Scalable web server](#scalable-web-server)
-            * [Elastic infrastructure](#elastic-infrastructure)
-            * [Immutable infrastructure](#immutable-infrastructure)
-            * [Microservice and serverless approach](#microservice-and-serverless-approach)
-            * [Multi-tenant architecture](#multi-tenant-architecture)
-            * [HIPAA and SOC2 guidelines](#hipaa-and-soc2-guidelines)
-            * [DevOps CI/CD environment](#devops-cicd-environment)
-            * [Infrastructure as a Code tools](#infrastructure-as-a-code-tools)
-      * [Working principles](#working-principles)
-            * [Separation of concerns](#separation-of-concerns)
-            * [Encapsulation](#encapsulation)
-            * [Single responsibility](#single-responsibility)
-            * [Don't Repeat Yourself](#don't-repeat-yourself)
-            * [Duplication is waste](#duplication-is-waste)
-            * [Dependency inversion principle](#dependency-inversion-principle)
-            * [Explicit dependencies principle](#explicit-dependencies-principle)
-            * [Persistence Ignorance](#persistence-ignorance)
-            * [Bounded context](#bounded-context)
+   * [Overview](#overview)
+   * [Core components](#core-components)
+   * [Three-tier architecture](#three-tier-architecture)
+      * [Presentation layer: client-side component (front-end)](#presentation-layer-client-side-component-front-end)
+      * [Application layer: web server](#application-layer-web-server)
+      * [Application layer: server-side component (back-end)](#application-layer-server-side-component-back-end)
+      * [Application layer: Application Programming Interface (API)](#application-layer-application-programming-interface-api)
+      * [Application layer: cloud instance](#application-layer-cloud-instance)
+      * [Data layer: database](#data-layer-database)
+   * [Scalability](#scalability)
+      * [Caching system](#caching-system)
+      * [Cloud storage (Amazon S3)](#cloud-storage-amazon-s3)
+      * [CDN (CloudFront)](#cdn-cloudfront)
+      * [Load balancer](#load-balancer)
+      * [Multiple servers](#multiple-servers)
+   * [Types of web application architecture](#types-of-web-application-architecture)
+      * [Monolithic architecture](#monolithic-architecture)
+      * [Microservice architecture](#microservice-architecture)
+      * [Containers](#containers)
+      * [Serverless architecture](#serverless-architecture)
+      * [API gateway](#api-gateway)
+   * [Best practices](#best-practices)
+      * [Scalable web server](#scalable-web-server)
+      * [Elastic infrastructure](#elastic-infrastructure)
+      * [Immutable infrastructure](#immutable-infrastructure)
+      * [Microservice and serverless approach](#microservice-and-serverless-approach)
+      * [Multi-tenant architecture](#multi-tenant-architecture)
+      * [HIPAA and SOC2 guidelines](#hipaa-and-soc2-guidelines)
+      * [DevOps CI/CD environment](#devops-cicd-environment)
+      * [Infrastructure as a Code tools](#infrastructure-as-a-code-tools)
+   * [Working principles](#working-principles)
+      * [Separation of concerns](#separation-of-concerns)
+      * [Encapsulation](#encapsulation)
+      * [Single responsibility](#single-responsibility)
+      * [Don't Repeat Yourself](#dont-repeat-yourself)
+      * [Duplication is waste](#duplication-is-waste)
+      * [Dependency inversion principle](#dependency-inversion-principle)
+      * [Explicit dependencies principle](#explicit-dependencies-principle)
+      * [Persistence Ignorance](#persistence-ignorance)
+      * [Bounded context](#bounded-context)
 
 ## Architecture and working principles of modern web applications
 
@@ -55,7 +55,9 @@ Web application architecture presents a layout with all software components (ser
 Typically, web-based application architecture comprises three core components:
 
 1. Web browser: the key component that interacts with user, receives input and manages presentation logic while controlling user interactions with the application. User inputs are validated as well.
+
 2. Web server: handles the business logic and processes user requests by routing the requests to the right component and managing entire application operations. It can run and oversee requests from a wide variety of clients.
+
 3. Database server: provides required data for the application and handles data-related tasks. In a multi-tiered architecture, database servers can manage business logic with help of stored procedures.
 
 ### Three-tier architecture
@@ -68,7 +70,7 @@ There are three layers of a three-tier architecture:
 2. Application layer
 3. Data layer
 
-![alt text](https://github.com/Tecatech/job-interview-preparation/tree/main/Application%20Security/Application%20Security%20Engineer/images/standard_web_application_architecture.jpg)
+![alt text](https://github.com/Tecatech/job-interview-preparation/blob/main/Application%20Security/Application%20Security%20Engineer/images/standard_web_application_architecture.jpg)
 
 In this model, intermediate servers receive client requests and process them by coordinating with subordinate servers applying the business logic. Communication between client and database is managed by the intermediate application layer, thereby enabling clients to access data from different DBMS solutions.
 
@@ -171,7 +173,7 @@ In a web application architecture, cloud storage is an obvious requirement. Clou
 
 As AWS is the most popular cloud service provider, Amazon S3 is the popularly used cloud storage solution in web application architecture across the globe. Amazon Simple Storage Service (S3) is a cloud storage service that is flexible, cost-effective, durable, secure and offers high availability and high scalability.
 
-![alt text](https://github.com/Tecatech/job-interview-preparation/tree/main/Application%20Security/Application%20Security%20Engineer/images/cloud_storage_amazon_s3.jpg)
+![alt text](https://github.com/Tecatech/job-interview-preparation/blob/main/Application%20Security/Application%20Security%20Engineer/images/cloud_storage_amazon_s3.jpg)
 
 In AWS, a cloud storage unit is called a bucket. When a bucket is created, it is deployed in the region specified by the user. Once deployment is done and objects are added to the bucket, the user can choose the storage class type along with features such as versioning control, lifecycle policies, bucket policy etc. AWS takes care of lifecycle management for a group of objects, including IAM policy and data protection.
 
@@ -236,7 +238,7 @@ Multimedia processing, live-streaming, chatbots CI pipelines, IoT sensor message
 
 In a microservice architecture, you can perform serverless computing using AWS Lambda, API gateway and API step functions.
 
-![alt text](https://github.com/Tecatech/job-interview-preparation/tree/main/Application%20Security/Application%20Security%20Engineer/images/serverless_architecture.jpg)
+![alt text](https://github.com/Tecatech/job-interview-preparation/blob/main/Application%20Security/Application%20Security%20Engineer/images/serverless_architecture.jpg)
 
 #### API gateway
 
