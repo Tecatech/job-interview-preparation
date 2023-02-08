@@ -49,6 +49,14 @@
       * [Confidentiality](#confidentiality)
       * [Integrity](#integrity)
       * [Availability](#availability)
+      * [Identification](#identification)
+      * [Authentication](#authentication)
+      * [Authorization](#authorization)
+      * [Accountability](#accountability)
+      * [Logs](#logs)
+      * [Functionality and assurance](#functionality-and-assurance)
+      * [Privacy](#privacy)
+      * [Non-repudiation](#non-repudiation)
    * [Information Security Policy](#information-security-policy)
    * [Threat intelligence](#threat-intelligence)
       * [Poorly secured systems](#poorly-secured-systems)
@@ -386,15 +394,57 @@ Basic tenets of information security are confidentiality, integrity and availabi
 
 #### Confidentiality
 
-Confidentiality measures are designed to prevent unauthorized disclosure of information. The purpose of the confidentiality principle is to keep personal information private and to ensure that it is visible and accessible only to those individuals who own it or need it to perform their organizational functions.
+In the context of information security, confidentiality means information to stay secret stays secret, and only those persons authorized to access it may receive access. From ancient times, mankind has known that information is power, and in our information age, access to information is more important than ever. Unauthorized access to confidential information may have devastating consequences, not only in national security applications, but also in commerce and industry. Main mechanisms of confidentiality protection in information systems are cryptography and access controls. Examples of threats to confidentiality are malware, intruders, social engineering, insecure networks, and poorly administered systems.
 
 #### Integrity
 
-Consistency includes protection against unauthorized changes (additions, deletions, alterations) to data. The principle of integrity ensures that data is accurate and reliable and is not modified incorrectly, whether accidentally or maliciously.
+Integrity is concerned with trustworthiness, origin, completeness, and correctness of information as well as prevention of improper or unauthorized data modification. In the information security context it refers not only to integrity of information itself, but also to the origin integrity – that is, integrity of the information source. Integrity protection mechanisms may be grouped into two broad types: preventive mechanisms, such as access controls that prevent unauthorized modification of information, and detective mechanisms, which are intended to detect unauthorized modifications when preventive mechanisms have failed. Controls that protect integrity include principles of least privilege, separation, and rotation of duties.
 
 #### Availability
 
-Availability is protection of a system ability to make software systems and data fully available when a user needs it (or at a specified time). The purpose of availability is to make technology infrastructure, applications and data available when they are needed for organizational process or for organization customers.
+Availability is protection of a system ability to make software systems and data fully available when a user needs it (or at a specified time). The purpose of availability is to make technology infrastructure, applications and data available when they are needed for organizational process or for organization customers. Although it is usually mentioned last, availability is not the least important pillar of information security. Therefore, despite being mentioned last in the CIA triad, availability is just as important and as necessary a component of information security as confidentiality and integrity. Attacks against availability are known as denial of service (DoS) attacks and are discussed below. Natural and man-made disasters obviously may also affect availability as well as confidentiality and integrity of information, though their frequency and severity greatly differ – natural disasters are infrequent but severe, whereas human errors are frequent but usually not as severe as natural disasters. In both cases, business continuity and disaster recovery planning (which at the very least includes regular and reliable backups) is intended to minimize losses.
+
+#### Identification
+
+Identification is the first step in the identify-authenticate-authorize sequence that is performed every day countless times by humans and computers alike when access to information or information processing resources is required. While particulars of identification systems differ depending on who or what is being identified, some intrinsic properties of identification apply regardless of these particulars – just three of these properties are scope, locality, and uniqueness of IDs.
+
+Identification name spaces can be local or global in scope. This is one of the reasons why two user accounts should never use the same name on the same system – not only because you would not be able to enforce access controls based on non-unique and ambiguous usernames, but also because you would not be able to establish accountability for user actions.
+
+To summarize, for information security purposes, unique names are required and, depending on their scope, they must be locally unique and possibly globally unique so that access control may be enforced and accountability established.
+
+#### Authentication
+
+Authentication, which happens just after identification and before authorization, verifies the authenticity of the identity declared at the identification stage. In other words, it is at the authentication stage when you prove that you are indeed the person or the system you claim to be. Regardless of the particular authentication method used, the aim is to obtain reasonable assurance that the identity declared at the identification stage belongs to the party in communication. It is important to note that reasonable assurance may mean different degrees of assurance, depending on the particular environment and application, and therefore may require different approaches to authentication: authentication requirements of a national security – critical system naturally differ from authentication requirements of a small company. Because different authentication methods have different costs and properties as well as different returns on investment, the choice of authentication method for a particular system or organization should be made after these factors have been carefully considered.
+
+#### Authorization
+
+After declaring identity at the identification stage and proving it at the authentication stage, users are assigned a set of authorizations (also referred to as rights, privileges, or permissions) that define what they can do on the system. These authorizations are most commonly set by the security or system administrator. These privileges may range from the extremes of «permit nothing» to «permit everything» and include anything in between. As you can see, the second and third stages of the identify-authenticate-authorize process depend on the first stage, and the final goal of the whole process is to enforce access control and accountability, which is described next.
+
+#### Accountability
+
+Accountability is another important principle of information security that refers to the possibility of tracing actions and events back in time to users, systems, or processes that performed them, to establish responsibility for actions or omissions. Authorization is the process of ensuring that a user has sufficient rights to perform the requested operation and preventing those without sufficient rights from doing the same. At the same time, authorization is also the process which gives rights depending on user identity – human or another system. A system may not be considered secure if it does not provide accountability, because it would be impossible to ascertain who is responsible and what did or did not happen in the system without that safeguard. Accountability in the context of information systems is mainly provided by logs.
+
+#### Logs
+
+System and application logs are ordered lists of events and actions and are the primary means of establishing accountability on most systems. However, logs may be considered trustworthy only if their integrity is reasonably assured. In other words, if anyone can write to erase logs or the audit trail, they would not be considered dependable enough to serve as the basis for accountability. Additionally, in case of networked or communication systems, logs should be correctly timestamped and time should be synchronized across the network so events that affect more than one system may be correctly correlated and attributed.
+
+#### Functionality and assurance
+
+Having introduced the concept of accountability and how it is implemented on most systems, it is time to look at perhaps one of the most challenging issues of information security: it is the difference between our expectations (as well as vendor advertising of product features) and what happens in fact that is referred to as functionality versus assurance.
+
+A particular system may claim to implement a dozen smart security features, but this is very different from being able to say with a high degree of confidence that it indeed implements them, implements them correctly, and will not behave in an unexpected manner. Another way of looking at the functionality versus assurance issue is that functionality is about what a system can do and assurance is about what a system will not do.
+
+#### Privacy
+
+Privacy in the information security context usually refers to expectation and rights of individuals to privacy of their personal information and adequate, secure handling of this information by its users. Personal information here usually refers to information that directly identifies a human being, such as a name and address, although details may differ in different countries.
+
+In many countries, privacy of personal information is protected by laws that impose requirements on organizations processing personal data and set penalties for noncompliance. The European Union (EU) in particular has strict personal data protection legislation in place, which limits how organizations may process personal information and what they can do with it. The US Constitution also guarantees certain privacy rights, although the approach to privacy issues differs between the United States and Europe.
+
+Since privacy is not only a basic human need but also a legally protected right in most countries, organizations should take necessary precautions to protect the confidentiality and integrity of personal information they collect, store, and process. Because of these requirements, although not in the CIA triad, privacy is also an inseparable part of information security and must be addressed in all information security policies as part of information security requirements.
+
+#### Non-repudiation
+
+Non-repudiation in the information security context refers to the property of cryptographic digital signatures that offers the possibility of proving whether a particular message has been digitally signed by the holder of a particular digital signature private key. Non-repudiation is a somewhat controversial subject, partly because it is an important one in this day and age of electronic commerce, and because it does not provide an absolute guarantee: a digital signature owner, who may like to repudiate a transaction maliciously, may always claim that his digital signature key was stolen by someone and that someone actually signed digital transaction in question, thus repudiating the transaction.
 
 ### Information Security Policy
 
