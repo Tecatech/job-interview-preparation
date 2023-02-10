@@ -518,7 +518,7 @@ The attackers do not make any change to the communication or target systems. Thi
 
 ## [CWE/SANS Top 25 Most Dangerous Software Errors](https://cwe.mitre.org/top25/archive/2022/2022_cwe_top25.html#cwe_top_25)
 
-### The 2022 CWE Top 25
+### [The 2022 CWE Top 25](https://cwe.mitre.org/top25/archive/2022/2022_cwe_top25.html#cwe_top_25)
 
 | Rank     | ID        | Name                                                                                                                                         |
 | :---:    | :---:     | :---                                                                                                                                         |
