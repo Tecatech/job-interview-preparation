@@ -710,7 +710,7 @@ Prevention techniques include:
 
 A lack of tracking in the presence of suspicious actions and occurrences can expand gaps in time that go unmonitored, allowing security breaches to go unnoticed for longer than they would with better logging. This OWASP Top 10 2021 section is meant to aid in identification, escalation, and resolution of recent breaches. Detection of a security breach is unlikely without recording and monitoring.
 
-A major European airline had a notifiable General Data Protection Regulation (GDPR) incident to illustrate this failure. Intruders presumably exploited payment application security flaws to gain data of over 400,000 consumer payments. In response, privacy authorities fined the airline 20 million pounds for misplaced data. To avoid such attacks, it is wise for users to:
+A major European airline had a notifiable General Data Protection Regulation (GDPR) incident to illustrate this failure. Intruders presumably exploited payment application security flaws to gain data of over 400 000 consumer payments. In response, privacy authorities fined the airline 20 million pounds for misplaced data. To avoid such attacks, it is wise for users to:
 
 * Verify that all authentication, access security systems, and server-side data validation problems are recorded with sufficient user information to detect suspicious or fraudulent accounts and stored for an adequate period to a delayed comprehensive investigation.
 * Make sure that logs are created in formats consumable by log management systems.
