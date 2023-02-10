@@ -422,7 +422,7 @@ Integrity is concerned with trustworthiness, origin, completeness, and correctne
 
 #### Availability
 
-Availability is protection of a system ability to make software systems and data fully available when a user needs it (or at a specified time). The purpose of availability is to make technology infrastructure, applications and data available when they are needed for organizational process or for organization customers. Although it is usually mentioned last, availability is not the least important pillar of information security. Therefore, despite being mentioned last in the CIA triad, availability is just as important and as necessary a component of information security as confidentiality and integrity. Attacks against availability are known as denial of service (DoS) attacks and are discussed below. Natural and man-made disasters obviously may also affect availability as well as confidentiality and integrity of information, though their frequency and severity greatly differ – natural disasters are infrequent but severe, whereas human errors are frequent but usually not as severe as natural disasters. In both cases, business continuity and disaster recovery planning (which at the very least includes regular and reliable backups) is intended to minimize losses.
+Availability is protection of a system ability to make software systems and data fully available when a user needs it (or at a specified time). The purpose of availability is to make technology infrastructure, applications and data available when they are needed for organizational process or for organization customers. Although it is usually mentioned last, availability is not the least important pillar of information security. Therefore, despite being mentioned last in the CIA triad, availability is just as important and as necessary a component of information security as confidentiality and integrity. Attacks against availability are known as Denial of Service (DoS) attacks and are discussed below. Natural and man-made disasters obviously may also affect availability as well as confidentiality and integrity of information, though their frequency and severity greatly differ – natural disasters are infrequent but severe, whereas human errors are frequent but usually not as severe as natural disasters. In both cases, business continuity and disaster recovery planning (which at the very least includes regular and reliable backups) is intended to minimize losses.
 
 #### Identification
 
@@ -663,7 +663,7 @@ One can avert these threats by employing the following prevention techniques:
 
 General security setup issues, quite like misconfigured access controls, pose significant hazards by providing attackers with quick and easy access to critical data and site regions.
 
-With an average rate of incidence of 4 percent and over 208 000 occurrences of a common weakness enumeration (CWE) in this category, OWASP checked 90 percent of applications for misconfiguration. «CWE-16 configuration» and «CWE-611 improper restriction of XML external entity reference» are two notable CWEs included. To avoid configuration complications, secure installation techniques must be used, which include:
+With an average rate of incidence of 4 percent and over 208 000 occurrences of a Common Weakness Enumeration (CWE) in this category, OWASP checked 90 percent of applications for misconfiguration. «CWE-16 configuration» and «CWE-611 improper restriction of XML external entity reference» are two notable CWEs included. To avoid configuration complications, secure installation techniques must be used, which include:
 
 * A systematic reinforcement process allows for quick and easy deployment of a secure environment. Configuration of developmental, quality control and operational environments should be similar, with distinct user privileges.
 * It is ideal for automating processes for establishing a new safe environment to save time and effort necessary. Unused features and frameworks should be removed or not installed. A primary platform with no unessential features, components, documentation, or demonstrations decreases the likelihood of configuration vulnerabilities.
@@ -672,7 +672,7 @@ With an average rate of incidence of 4 percent and over 208 000 occurrences of a
 
 The majority of online apps are created with help of third-party frameworks. Unknown application codes may result in undesirable outcomes and unwanted situations such as accent control violations, SQL injections.
 
-If the program is insecure, unsupported, or outdated, there may be vulnerability-related hazards. The package includes web server, operating system, applications, database management system (DBMS), APIs, other elements, libraries, and runtime environments.
+If the program is insecure, unsupported, or outdated, there may be vulnerability-related hazards. The package includes web server, operating system, applications, Database Management Systems (DBMS), APIs, other elements, libraries, and runtime environments.
 
 Automated approaches are available to aid attackers in finding improperly configured or unpatched machines. For instance, Shodan IoT search engine may aid users in discovering devices that are susceptible to Heartbleed threat, which was fixed in April 2014. Certain prevention techniques include:
 
@@ -697,7 +697,7 @@ To avoid such defects, one must consider the following preventive measures:
 
 As more sensitive information is stored in databases, vulnerable to security breaches, data integrity concerns become essential for software.
 
-This is a new category, and it focuses on assuming the integrity of software updates, vital data, and CI/CD procedures without verifying them. One example is when applications use extensions, modules, or repositories from content delivery networks (CDNs) or unauthorized sources. CI/CD process that is not protected might raise risk of malicious code, system compromise or unauthorized access.
+This is a new category, and it focuses on assuming the integrity of software updates, vital data, and CI/CD procedures without verifying them. One example is when applications use extensions, modules, or repositories from Content Delivery Networks (CDNs) or unauthorized sources. CI/CD process that is not protected might raise risk of malicious code, system compromise or unauthorized access.
 
 Prevention techniques include:
 
@@ -719,10 +719,10 @@ A major European airline had a notifiable General Data Protection Regulation (GD
 
 #### 10. Server-Side Request Forgery (SSRF)
 
-The results for this category reveal an above-average testing coverage, reasonably low incidence rate, and above-average Impact and Exploit ratings. SSRF develops when server-side queries are conducted without verifying the URL given by the user. This allows an attacker to induce an application to transmit a forged request to an undesired location, even if it is protected by virtual private networks (VPN), firewalls, or network access control list (ACL).
+The results for this category reveal an above-average testing coverage, reasonably low incidence rate, and above-average Impact and Exploit ratings. SSRF develops when server-side queries are conducted without verifying the URL given by the user. This allows an attacker to induce an application to transmit a forged request to an undesired location, even if it is protected by Virtual Private Networks (VPN), firewalls, or network Access Control Lists (ACL).
 
 Fetching a URL has become a typical occurrence as new online applications give end-users convenient functionalities. Consequently, SSRF prevalence is increasing. In addition, intensity of SSRF is growing due to cloud services and design complexity. With that in mind, one can avoid such attacks by employing the following prevention techniques:
 
 * To limit effects of SSRF, one should separate remote resource access functions into distinct networks.
 * Install «deny by default» firewall settings or network access control rules for blocking all web traffic except for required internal traffic.
-* To protect against attacks like DNS remapping and «time of check, time of usage», in (TOCTOU) situations, it is good to be conscious of URL accuracy.
+* To protect against attacks like DNS remapping and «time of check, time of usage», in TOCTOU situations, it is good to be conscious of URL accuracy.
