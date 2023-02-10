@@ -68,6 +68,7 @@
    * [Active and passive attacks](#active-and-passive-attacks)
       * [Active attack](#active-attack)
       * [Passive attack](#passive-attack)
+* [CWE/SANS Top 25 Most Dangerous Software Errors](#cwesans-top-25-most-dangerous-software-errors)
 
 ## Architecture and working principles of modern web applications
 
@@ -513,3 +514,33 @@ An active attack involves intercepting a communication or message and altering i
 In a passive attack, an attacker monitors a system and illicitly copies information without altering it. They then use this information to disrupt networks or compromise target systems.
 
 The attackers do not make any change to the communication or target systems. This makes it more difficult to detect. However, encryption can help prevent passive attacks because it obfuscates data, making it more difficult to for attackers to make use of it.
+
+## [CWE/SANS Top 25 Most Dangerous Software Errors](https://cwe.mitre.org/top25/archive/2022/2022_cwe_top25.html#cwe_top_25)
+
+| Rank     | ID        | Name                                                                                                                                         |
+| :---:    | :---:     | :---                                                                                                                                         |
+| **1**    | [CWE-787](https://cwe.mitre.org/data/definitions/787.html) | Out-of-Bounds Write                                                                         |
+| **2**    | [CWE-79](https://cwe.mitre.org/data/definitions/79.html)   | Improper Neutralization of Input During Web Page Generation («Cross-Site Scripting»)        |
+| **3**    | [CWE-89](https://cwe.mitre.org/data/definitions/89.html)   | Improper Neutralization of Special Elements used in an SQL Command («SQL Injection»)        |
+| **4**    | [CWE-20](https://cwe.mitre.org/data/definitions/20.html)   | Improper Input Validation                                                                   |
+| **5**    | [CWE-125](https://cwe.mitre.org/data/definitions/125.html) | Out-of-Bounds Read                                                                          |
+| **6**    | [CWE-78](https://cwe.mitre.org/data/definitions/78.html)   | Improper Neutralization of Special Elements used in an OS Command («OS Command Injection»)  |
+| **7**    | [CWE-416](https://cwe.mitre.org/data/definitions/416.html) | Use-After-Free                                                                              |
+| **8**    | [CWE-22](https://cwe.mitre.org/data/definitions/22.html)   | Improper Limitation of a Pathname to a Restricted Directory («Path Traversal»)              |
+| **9**    | [CWE-352](https://cwe.mitre.org/data/definitions/352.html) | Cross-Site Request Forgery (CSRF)                                                           |
+| **10**   | [CWE-434](https://cwe.mitre.org/data/definitions/434.html) | Unrestricted Upload of File with Dangerous Type                                             |
+| **11**   | [CWE-476](https://cwe.mitre.org/data/definitions/476.html) | NULL Pointer Dereference                                                                    |
+| **12**   | [CWE-502](https://cwe.mitre.org/data/definitions/502.html) | Deserialization of Untrusted Data                                                           |
+| **13**   | [CWE-190](https://cwe.mitre.org/data/definitions/190.html) | Integer Overflow or Wraparound                                                              |
+| **14**   | [CWE-287](https://cwe.mitre.org/data/definitions/287.html) | Improper Authentication                                                                     |
+| **15**   | [CWE-798](https://cwe.mitre.org/data/definitions/798.html) | Use of Hard-coded Credentials                                                               |
+| **16**   | [CWE-862](https://cwe.mitre.org/data/definitions/862.html) | Missing Authorization                                                                       |
+| **17**   | [CWE-77](https://cwe.mitre.org/data/definitions/77.html)   | Improper Neutralization of Special Elements used in a Command («Command Injection»)         |
+| **18**   | [CWE-306](https://cwe.mitre.org/data/definitions/306.html) | Missing Authentication for Critical Function                                                |
+| **19**   | [CWE-119](https://cwe.mitre.org/data/definitions/119.html) | Improper Restriction of Operations within the Bounds of a Memory Buffer                     |
+| **20**   | [CWE-276](https://cwe.mitre.org/data/definitions/276.html) | Incorrect Default Permissions                                                               |
+| **21**   | [CWE-918](https://cwe.mitre.org/data/definitions/918.html) | Server-Side Request Forgery (SSRF)                                                          |
+| **22**   | [CWE-362](https://cwe.mitre.org/data/definitions/362.html) | Concurrent Execution using Shared Resource with Improper Synchronization («Race Condition») |
+| **23**   | [CWE-400](https://cwe.mitre.org/data/definitions/400.html) | Uncontrolled Resource Consumption                                                           |
+| **24**   | [CWE-611](https://cwe.mitre.org/data/definitions/611.html) | Improper Restriction of XML External Entity Reference                                       |
+| **25**   | [CWE-94](https://cwe.mitre.org/data/definitions/94.html)   | Improper Control of Generation of Code («Code Injection»)                                   |
