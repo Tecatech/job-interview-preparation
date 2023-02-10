@@ -69,6 +69,7 @@
       * [Active attack](#active-attack)
       * [Passive attack](#passive-attack)
 * [CWE/SANS Top 25 Most Dangerous Software Errors](#cwesans-top-25-most-dangerous-software-errors)
+   * [The 2022 CWE Top 25](#the-2022-cwe-top-25)
 
 ## Architecture and working principles of modern web applications
 
@@ -516,6 +517,8 @@ In a passive attack, an attacker monitors a system and illicitly copies informat
 The attackers do not make any change to the communication or target systems. This makes it more difficult to detect. However, encryption can help prevent passive attacks because it obfuscates data, making it more difficult to for attackers to make use of it.
 
 ## [CWE/SANS Top 25 Most Dangerous Software Errors](https://cwe.mitre.org/top25/archive/2022/2022_cwe_top25.html#cwe_top_25)
+
+### The 2022 CWE Top 25
 
 | Rank     | ID        | Name                                                                                                                                         |
 | :---:    | :---:     | :---                                                                                                                                         |
