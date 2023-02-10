@@ -70,6 +70,24 @@
       * [Passive attack](#passive-attack)
 * [CWE/SANS Top 25 Most Dangerous Software Errors](#cwesans-top-25-most-dangerous-software-errors)
    * [The 2022 CWE Top 25](#the-2022-cwe-top-25)
+* [OWASP Top 10](#owasp-top-10)
+   * [Overview](#overview)
+   * [Methodology](#methodology)
+   * [New vulnerability categories](#new-vulnerability-categories)
+   * [Critical changes](#critical-changes)
+      * [A03:2021 – Injections become more expansive](#a03:2021–injections-become-more-expansive)
+      * [A05:2021 – Security misconfiguration rising in priority](#a05:2021–security-misconfiguration-rising-in-priority)
+   * [OWASP Top 10 application vulnerabilities 2022](owasp-top-10-application-vulnerabilities-2022)
+      * [1. Broken access control](#1-broken-access-control)
+      * [2. Cryptographic failures](#2-cryptographic-failures)
+      * [3. Injections](#3-injections)
+      * [4. Insecure design](#4-insecure-design)
+      * [5. Security misconfigurations](#5-security-misconfigurations)
+      * [6. Vulnerable and outdated components](#6-vulnerable-and-outdated-components)
+      * [7. Identification and authentication failures](#7-identification-and-authentication-failures)
+      * [8. Software and data integrity failures](#8-software-and-data-integrity-failures)
+      * [9. Security logging and monitoring failures](#9-security-logging-and-monitoring-failures)
+      * [10. Server-Side Request Forgery (SSRF)](#10-server-side-request-forgery-SSRF)
 
 ## Architecture and working principles of modern web applications
 
@@ -536,7 +554,7 @@ The attackers do not make any change to the communication or target systems. Thi
 | **12**   | [CWE-502](https://cwe.mitre.org/data/definitions/502.html) | Deserialization of Untrusted Data                                                           |
 | **13**   | [CWE-190](https://cwe.mitre.org/data/definitions/190.html) | Integer Overflow or Wraparound                                                              |
 | **14**   | [CWE-287](https://cwe.mitre.org/data/definitions/287.html) | Improper Authentication                                                                     |
-| **15**   | [CWE-798](https://cwe.mitre.org/data/definitions/798.html) | Use of Hard-coded Credentials                                                               |
+| **15**   | [CWE-798](https://cwe.mitre.org/data/definitions/798.html) | Use of Hard-Coded Credentials                                                               |
 | **16**   | [CWE-862](https://cwe.mitre.org/data/definitions/862.html) | Missing Authorization                                                                       |
 | **17**   | [CWE-77](https://cwe.mitre.org/data/definitions/77.html)   | Improper Neutralization of Special Elements used in a Command («Command Injection»)         |
 | **18**   | [CWE-306](https://cwe.mitre.org/data/definitions/306.html) | Missing Authentication for Critical Function                                                |
@@ -547,3 +565,164 @@ The attackers do not make any change to the communication or target systems. Thi
 | **23**   | [CWE-400](https://cwe.mitre.org/data/definitions/400.html) | Uncontrolled Resource Consumption                                                           |
 | **24**   | [CWE-611](https://cwe.mitre.org/data/definitions/611.html) | Improper Restriction of XML External Entity Reference                                       |
 | **25**   | [CWE-94](https://cwe.mitre.org/data/definitions/94.html)   | Improper Control of Generation of Code («Code Injection»)                                   |
+
+## [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+
+### Overview
+
+The OWASP Top 10 is put out by the Open Web Application Security Project (OWASP) Foundation. OWASP is a non-profit organization with a mission to bolster software security across industries. To further that mission, OWASP maintains and publicly shares the OWASP Top 10, an awareness document for web application security vulnerabilities.
+
+For each ranking period, OWASP collects application data from a variety of sources and conducts a survey to gather important information about the top vulnerabilities developers encounter, but that may not be expressed in the application data received. These are usually trends developers observe that may have potential to cause damage. Submitted web application data and survey results are used together to rank the top ten security vulnerabilities.
+
+### Methodology
+
+Vulnerabilities are ranked based on a range of factors, which include analysis of actual web application data submitted by individuals and organizations. Contributed data can be attributed to companies or kept pseudo-anonymous. Data sources also include bug bounty programs, security consultancies, and vendors. Contributors provide details of the time period for data, total number of web applications, and list of Common Weakness Enumerations (CWEs) as defined by MITRE. Contributors must also provide a number of applications containing each core CWE.
+
+During analysis, OWASP finds the number of applications with one or more instances of a CWE. Incidence rate is calculated by totaling all the applications that were tested and then comparing that number to the total number of applications where a CWE occurred. The top ten results are then ranked based on additional input from the accompanying survey of application and security experts. Analysis focuses on the root cause of vulnerabilities above the symptom whenever possible.
+
+The OWASP Top 10 for 2021 contained more application data than any previous report the foundation had put out. A record 500 000 applications were submitted. The 2021 list was also the most data-driven version. Data volume required a shift in how the project categorized vulnerabilities.
+
+### New vulnerability categories
+
+These new categories were created to highlight trends in application data and to provide additional training benefits for companies that focus on specific CWEs related to the programming languages or frameworks they actively use.
+
+* Insecure design: this category contains risks related to design and infrastructure flaws. Differentiated from other vulnerabilities, insecure design cannot be fixed through proper implementation.
+* Software and data entry failures: this category includes risks related to accepting software updates without verifying integrity. This vulnerability focuses on the assumption these updates can always be trusted.
+* Server-Side Request Forgery (SSRF): risks related to URL fetching from one application to another, at the user request, without verifying URL integrity are grouped under this category. This server-side vulnerability is considered risky because forged requests can bypass security measures such as firewalls, VPNs, or other access controls.
+
+### Critical changes
+
+#### A03:2021 – Injections become more expansive
+
+The first modification involves injections. Injection attacks happen when a hacker tries to send data to a web application, such that the web application performs an unintended action. These may include SQL, operating system, and Lightweight Directory Access Protocol (LDAP) injection flaws. Since this flaw is also an injectable, the current update to the OWASP Top 10 adds A07:2017 Cross-Site Scripting (XSS).
+
+#### A05:2021 – Security misconfiguration rising in priority
+
+Given the rising number of configuration options, this category has risen in the OWASP Top 10. In addition, it includes A04: 2017 XML External Entities beginning in 2021 (XXE). The XXE attack targets a client-side program that processes XML input. An XML-External-Entities Attack happens when unsafe XML input references to external entities are interpreted and processed. However, this attack is only successful with a flawed or improperly configured XML parser. Therefore, A04:2017 XML External Entities (XXE) has been integrated into A05:2021 Security Misconfiguration as a particular sort of misconfiguration.
+
+### [OWASP Top 10 application vulnerabilities 2022](https://owasp.org/www-project-top-ten/)
+
+#### 1. Broken access control
+
+Access control implements strategies to prevent users from operating beyond the scope of their specified permissions. Due to access vulnerabilities, unauthenticated or unwanted users may access classified data and processes and user privilege settings.
+
+Metadata manipulation, including tampering or replaying with a JSON Web Token (JWT) access control token, or modifying cookies or hidden fields to boost privileges or exploit JWT invalidation, is an example of an access control vulnerability. A second example is a breach of the denial principle by default. Access must be granted only to specific roles, capabilities, or users but is accessible to everyone. Such errors may make it simple for attackers to get access to everything they want.
+
+However, one may avoid inadequate access security mechanisms and identity or password management issues by applying secure coding approaches and taking precautions such as disabling administrator accounts and restrictions and installing multifactor authentication.
+
+Additional prevention techniques include:
+
+* Enforce access control mechanisms only once and reuse them for the duration of the application to reduce Cross-Origin Resource Sharing (CORS).
+* Domain models should impose distinct application business limit constraints.
+* Limit access to Application Programming Interfaces (API) and controllers to mitigate the effects of automated attack tools.
+* Log failures in access control and alert administrators as required.
+* Instead of granting user permission to create, view, modify or erase any information, model access controls must enforce record ownership.
+
+#### 2. Cryptographic failures
+
+Cryptographic failures, formerly known as sensitive data exposure, rose one spot to position two. This is more of a symptom than a primary cause – emphasis here lies on cryptographic errors or lack thereof, which frequently expose sensitive data. The following are typical examples of sensitive information exposure:
+
+* Session tokens
+* Login IDs and passwords
+* Online transactions
+* Personal information (switched service network or SSN, health records)
+
+For instance, an application may securely encrypt credit card data with automated database encryption. Unfortunately, it is immediately unencrypted when this information is accessed, enabling a SQL injection fault to extract credit card information in clear text, which an intruder may exploit. These failures can be avoided using the following prevention techniques:
+
+* You should use robust, salted and adaptive hashing algorithms with a delay factor to store passwords, like scrypt, Argon2, PBKDF2 or bcrypt.
+* Older protocols such as File Transfer Protocol (FTP) and Simple Mail Transfer Protocol (SMTP) should be avoided when transferring sensitive data.
+* Instead of merely using encryption, it is advisable to implement authenticated encryption.
+* Cryptographically random keys must be produced and stored as byte arrays. If passwords are employed, it has to be changed into something like a key using an algorithm for password-based key creation.
+
+#### 3. Injections
+
+Injection (or SQL injections) is a database attack against a website that uses Structured Query Language (SQL) to obtain information or perform activities that would ordinarily need an authenticated user account. These codes are difficult for a program to interpret from its own code, allowing attackers to conduct injection attacks to gain access to protected areas and sensitive data masquerading as trusted users. Injections include SQL injections, command injections, CRLF injections, and LDAP injections.
+
+With a maximum estimated incidence of 19 percent, an average rate of incidence of 3 percent, and 274 000 instances, 94 percent of the applications were screened for injections. As a result, Injection fell to the third position in the revised list.
+
+Some prevention techniques include:
+
+* A preferable alternative is to employ an API that completely eschews the interpreter, offers a parameterized API, or translocates to Object-Relational Mapping (ORM) instruments.
+* Utilizing positive server-side validation input is recommended. Numerous applications, including text fields and APIs for mobile apps, necessitate special characters.
+* Utilizing LIMIT and other SQL constraints inside queries is a great way to avoid massive data exposure in case of an SQL injection.
+
+#### 4. Insecure design
+
+This is a brand-new category for 2021 that focuses on design and architectural flaws, with a need for greater use of threat modeling, design safety recommendations, and reference architectures. Insecure design is a wide category that contains a variety of problems, such as «missing or inadequate control design». That does not imply that insecure design is the root of all other top 10 risk categories.
+
+Insecure design is not the same as insecure implementation. Implementation flaws can lead to vulnerabilities, even when the design is secure. On the other hand, a flawed design cannot be compensated for by a flawless implementation, as necessary security safeguards do not exist to defend against specific threats.
+
+One can avert these threats by employing the following prevention techniques:
+
+* Set up and use a secure development lifecycle with assistance of Application Security specialists to evaluate and build security and privacy safeguards.
+* Threat modeling is advised for crucial verification, access control, application logic, and essential flows.
+* Include security terminology and controls inside user stories.
+* Tenant segregation by design across all tiers is also seen as a practical preventative approach.
+
+#### 5. Security misconfigurations
+
+General security setup issues, quite like misconfigured access controls, pose significant hazards by providing attackers with quick and easy access to critical data and site regions.
+
+With an average rate of incidence of 4 percent and over 208 000 occurrences of a common weakness enumeration (CWE) in this category, OWASP checked 90 percent of applications for misconfiguration. «CWE-16 configuration» and «CWE-611 improper restriction of XML external entity reference» are two notable CWEs included. To avoid configuration complications, secure installation techniques must be used, which include:
+
+* A systematic reinforcement process allows for quick and easy deployment of a secure environment. Configuration of developmental, quality control and operational environments should be similar, with distinct user privileges.
+* It is ideal for automating processes for establishing a new safe environment to save time and effort necessary. Unused features and frameworks should be removed or not installed. A primary platform with no unessential features, components, documentation, or demonstrations decreases the likelihood of configuration vulnerabilities.
+
+#### 6. Vulnerable and outdated components
+
+The majority of online apps are created with help of third-party frameworks. Unknown application codes may result in undesirable outcomes and unwanted situations such as accent control violations, SQL injections.
+
+If the program is insecure, unsupported, or outdated, there may be vulnerability-related hazards. The package includes web server, operating system, applications, database management system (DBMS), APIs, other elements, libraries, and runtime environments.
+
+Automated approaches are available to aid attackers in finding improperly configured or unpatched machines. For instance, Shodan IoT search engine may aid users in discovering devices that are susceptible to Heartbleed threat, which was fixed in April 2014. Certain prevention techniques include:
+
+* It is best to purchase components from official sources through secure channels.
+* Keep a lookout for modules and elements that are not functional or do not provide security updates for older versions. If patching cannot be carried out, consider developing virtual patches to observe, identify, or safeguard against the observed vulnerability.
+* Remove any excessive requirements, functionalities, elements, folders, or documentation.
+
+#### 7. Identification and authentication failures
+
+This category, formerly known as broken authentication, dropped from second place and now contains CWEs linked to identification problems. When an attacker obtains user information, password recovery, ID sessions, and other login credentials, it poses security issues. As the name implies, an identity and authentication failure includes hackers exploiting such vulnerabilities to take advantage of inadequate authentication.
+
+If the application permits automated assaults like credential stuffing – when the attacker has access to lists of real users and passwords – or predefined, weaker, and common passwords such as «password» or «admin», these could be signs of authentication flaws.
+
+To avoid such defects, one must consider the following preventive measures:
+
+* Multifactor authentication must be used wherever feasible to avoid automated credential stuffing, brute-force attacks, and reuse of stolen credentials.
+* By checking new or modified passwords against a database of the 10 000 worst passwords, it is possible to boost password security.
+* Using the same messages for every outcome helps prevent account enumeration attacks on password recovery, registrations, and API paths.
+* Do not install any default credentials, especially for administrative users.
+
+#### 8. Software and data integrity failures
+
+As more sensitive information is stored in databases, vulnerable to security breaches, data integrity concerns become essential for software.
+
+This is a new category, and it focuses on assuming the integrity of software updates, vital data, and CI/CD procedures without verifying them. One example is when applications use extensions, modules, or repositories from content delivery networks (CDNs) or unauthorized sources. CI/CD process that is not protected might raise risk of malicious code, system compromise or unauthorized access.
+
+Prevention techniques include:
+
+* One might use measures such as digital signatures to confirm that data or software comes from expected sources without any tampering.
+* A security tool for software supply chains, like OWASP CycloneDX or OWASP Dependency-Check, may be used to guarantee that components do not include design flaws.
+* It is necessary to guarantee that CI/CD workflow has required segmentation, access control, and parameterization to safeguard code integrity throughout set-up and deploy operations.
+* Compilation data that is unsigned or unencrypted should not be sent to untrusted clients unless integrity testing or a digital signature is in place to identify data alteration or duplication.
+
+#### 9. Security logging and monitoring failures
+
+A lack of tracking in the presence of suspicious actions and occurrences can expand gaps in time that go unmonitored, allowing security breaches to go unnoticed for longer than they would with better logging. This OWASP Top 10 2021 section is meant to aid in identification, escalation, and resolution of recent breaches. Detection of a security breach is unlikely without recording and monitoring.
+
+A major European airline had a notifiable General Data Protection Regulation (GDPR) incident to illustrate this failure. Intruders presumably exploited payment application security flaws to gain data of over 400,000 consumer payments. In response, privacy authorities fined the airline 20 million pounds for misplaced data. To avoid such attacks, it is wise for users to:
+
+* Verify that all authentication, access security systems, and server-side data validation problems are recorded with sufficient user information to detect suspicious or fraudulent accounts and stored for an adequate period to a delayed comprehensive investigation.
+* Make sure that logs are created in formats consumable by log management systems.
+* Create or apply a strategy for incident recovery and response efforts, like NIST 800-61r2 or a later version.
+* Ensure that log data is encoded appropriately to avoid intrusions or cyber threats to monitoring systems.
+
+#### 10. Server-Side Request Forgery (SSRF)
+
+The results for this category reveal an above-average testing coverage, reasonably low incidence rate, and above-average Impact and Exploit ratings. SSRF develops when server-side queries are conducted without verifying the URL given by the user. This allows an attacker to induce an application to transmit a forged request to an undesired location, even if it is protected by virtual private networks (VPN), firewalls, or network access control list (ACL).
+
+Fetching a URL has become a typical occurrence as new online applications give end-users convenient functionalities. Consequently, SSRF prevalence is increasing. In addition, intensity of SSRF is growing due to cloud services and design complexity. With that in mind, one can avoid such attacks by employing the following prevention techniques:
+
+* To limit effects of SSRF, one should separate remote resource access functions into distinct networks.
+* Install «deny by default» firewall settings or network access control rules for blocking all web traffic except for required internal traffic.
+* To protect against attacks like DNS remapping and «time of check, time of usage», in (TOCTOU) situations, it is good to be conscious of URL accuracy.
