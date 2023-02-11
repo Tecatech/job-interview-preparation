@@ -88,6 +88,18 @@
       * [8. Software and data integrity failures](#8-software-and-data-integrity-failures)
       * [9. Security logging and monitoring failures](#9-security-logging-and-monitoring-failures)
       * [10. Server-Side Request Forgery (SSRF)](#10-server-side-request-forgery-SSRF)
+* [Information security standards](#information-security-standards)
+   * [ISO/IEC 27XXX](#isoiec-27xxx)
+      * [Overview](#overview)
+      * [ISO/IEC 27001](#isoiec-27001)
+      * [ISO/IEC 27002:2013](#isoiec-270022013)
+      * [ISO/IEC 27019:2017](#isoiec-270192017)
+   * [PCI DSS](#pci-dss)
+      * [Overview](#overview)
+      * [Handling card data](#handling-card-data)
+      * [Storing card data securely](#storing-card-data-securely)
+      * [Annual validation](#annual-validation)
+      * [The 12 requirements of PCI DSS](#the-12-requirements-of-pci-dss)
 
 ## Architecture and working principles of modern web applications
 
@@ -721,8 +733,122 @@ A major European airline had a notifiable General Data Protection Regulation (GD
 
 The results for this category reveal an above-average testing coverage, reasonably low incidence rate, and above-average Impact and Exploit ratings. SSRF develops when server-side queries are conducted without verifying the URL given by the user. This allows an attacker to induce an application to transmit a forged request to an undesired location, even if it is protected by Virtual Private Networks (VPN), firewalls, or network Access Control Lists (ACL).
 
-Fetching a URL has become a typical occurrence as new online applications give end-users convenient functionalities. Consequently, SSRF prevalence is increasing. In addition, intensity of SSRF is growing due to cloud services and design complexity. With that in mind, one can avoid such attacks by employing the following prevention techniques:
+Fetching an URL has become a typical occurrence as new online applications give end-users convenient functionalities. Consequently, SSRF prevalence is increasing. In addition, intensity of SSRF is growing due to cloud services and design complexity. With that in mind, one can avoid such attacks by employing the following prevention techniques:
 
 * To limit effects of SSRF, one should separate remote resource access functions into distinct networks.
 * Install «deny by default» firewall settings or network access control rules for blocking all web traffic except for required internal traffic.
 * To protect against attacks like DNS remapping and «time of check, time of usage», in TOCTOU situations, it is good to be conscious of URL accuracy.
+
+## Information security standards
+
+### ISO/IEC 27XXX
+
+#### Overview
+
+The ISO/IEC 27000 series covers a wide range of cybersecurity requirements and guidelines, including those supporting the setting up of the ISO/IEC 27001 ISMS (Information Security Management System) which is covered in this Annex. This ISO/IEC 27001 family of standards has grown quickly over the last years.
+
+ISO/IEC 27001 (with other standards in the family 27XXX) also provides a framework for third party audits and certification of an organization ISMS. Organizations can have their information security management system certified against ISO/IEC 27001 by independent certification bodies that have to be accredited by a national accreditation body.
+
+The ISMS family of standards consists of inter-related standards, already published or under development, and contains a number of significant structural components. These components are focused on:
+
+* Standards describing ISMS requirements (ISO/IEC 27001).
+* Certification body requirements (ISO/IEC 27006) for those certifying conformity with ISO/IEC 27001.
+* Additional requirement framework for sector-specific implementations of the ISMS (ISO/IEC 27009).
+
+Other documents provide guidance for various aspects of an ISMS implementation, addressing a generic process as well as sector-specific guidance.
+
+![alt text](https://github.com/Tecatech/job-interview-preparation/blob/main/Application%20Security/Application%20Security%20Engineer/images/iso-iec_27000_series.png)
+
+#### ISO/IEC 27001
+
+ISO/IEC 27001 is a worldwide-recognized standard providing requirements for the setting up of an Information Security Management System (ISMS). ISMS is described as a «systematic approach for establishing, implementing, operating, monitoring, reviewing, maintaining and improving an organization information security to achieve business objectives. It is based on a risk assessment and the organization risk acceptance levels designed to effectively treat and manage risks».
+
+The following steps need to be applied and continually repeated to establish, monitor, maintain and improve an ISMS:
+
+* identify information assets and their associated information security requirements, while considering legal, regulatory, and contractual requirements;
+* assess information security risks and treat information security risks, including:
+  * a risk analysis and risks evaluation;
+  * application of appropriate controls and risks acceptance;
+* select and implement relevant controls to manage unacceptable risks: controls can be selected from ISO/IEC 27002 and all ISO/IEC 27002 sector-specific standards, e.g. ISO/IEC 27019 for the energy sector;
+* monitor, maintain and improve effectiveness of controls associated with organization information assets.
+
+#### ISO/IEC 27002:2013
+
+ISO/IEC 27002 is a code of practice – a generic set of controls addressing information security control objectives to mitigate security risks impacting for example confidentiality, integrity and availability of information.
+
+ISO/IEC 27002 security controls are organized within the following main clauses:
+
+* Organization of information security
+* Human resource security
+* Asset management
+* Access control
+* Cryptography
+* Physical and environmental security
+* Operations security
+* Communications security
+* System acquisition, development and maintenance
+* Supplier relationships
+* Information security incident management
+* Compliance
+
+#### ISO/IEC 27019:2017
+
+ISO/IEC 27019 provides guiding principles based on ISO/IEC 27002 for information security management applied to process control systems as used in energy utility industry. The aim of ISO/IEC 27019 is to extend the ISO/IEC 27000 set of standards to the domain of process control systems and automation technology. This allows the energy utility industry to implement a standardized Information Security Management System (ISMS) in accordance with ISO/IEC 27001 that extends from business to process control level.
+
+The scope of ISO/IEC 27019 covers process control systems used by the energy utility industry for controlling and monitoring generation, transmission, storage and distribution of electric power, gas and heat in combination with control of supporting processes. This includes in particular the following systems, applications and components:
+
+* Overall IT-supported central and distributed process control, monitoring and automation technology as well as IT-systems used for their operation, such as programming and parameterization devices.
+* Digital controllers and automation components such as control and field devices or PLCs, including digital sensor and actuator elements.
+* All further supporting it systems used in process control domain, e.g. for supplementary data visualization tasks and for controlling, monitoring, data archiving and documentation purposes.
+* Overall communications technology used in the process control domain, e.g. networks, telemetry, decontrol applications and remote control technology.
+* Digital metering and measurement devices, e.g. for measuring energy consumption, generation or emission values.
+* Digital protection and safety systems, e.g. protection relays or safety PLCs.
+* Distributed components of future smart grid environments.
+* All software, firmware and applications installed on above-mentioned systems.
+
+### PCI DSS
+
+#### Overview
+
+PCI DSS is the global security standard for all entities that store, process, or transmit cardholder data or sensitive authentication data. PCI DSS sets a baseline level of protection for consumers and helps reduce fraud and data breaches across the entire payment ecosystem. It is applicable to any organization that accepts or processes payment cards.
+
+PCI DSS compliance involves three main components:
+
+1. Handling ingress of credit card data from customers; namely, that sensitive card details are collected and transmitted securely.
+2. Storing data securely, which is outlined in the 12 security domains of the PCI standard, such as encryption, ongoing monitoring, and security testing of access to card data.
+3. Validating annually that required security controls are in place, which can include forms, questionnaires, external vulnerability scanning services, and third-party audits.
+
+#### Handling card data
+
+Some business models do require the direct handling of sensitive credit card data when accepting payments, while others do not. Companies that do need to handle card data may be required to meet each of the 300+ security controls in PCI DSS. Even if card data only traverses its servers for a short moment, the company would need to purchase, implement, and maintain security software and hardware.
+
+If a company does not need to handle sensitive credit card data, it should not. Third-party solutions securely accept and store data, whisking away considerable complexity, cost, and risk. Since card data never touches its servers, the company would only need to confirm 22 security controls, most of which are straightforward, such as using strong passwords.
+
+#### Storing data securely
+
+If an organization handles or stores credit card data, it needs to define the scope of its Cardholder Data Environment (CDE). PCI DSS defines CDE as people, processes, and technologies that store, process, or transmit credit card data – or any system connected to it. Since all 300+ security requirements in PCI DSS apply to CDE, it is important to properly segment payment environment from the rest of business to limit the scope of PCI validation. If an organization is unable to contain the CDE scope with granular segmentation, the PCI security controls would then apply to every system, laptop, and device on its corporate network.
+
+#### Annual validation
+
+Regardless of how card data is accepted, organizations are required to complete a PCI validation form annually. The way PCI compliance is validated depends on a number of factors, which are outlined below. Here are three scenarios in which an organization could be asked to show that it is PCI-compliant:
+
+* Payment processors may request it as part of their required reporting to the payment card brands.
+* Business partners may request it as a prerequisite to entering into business agreements.
+* For platform businesses (those whose technology facilitates online transactions among multiple distinct sets of users), customers may request it to show their customers that they are handling data securely.
+
+#### The 12 requirements of PCI DSS
+
+The latest set of security standards, PCI DSS version 3.2.1, includes 12 main requirements with more than 300 sub-requirements that mirror security best practices:
+
+1. Install and maintain a firewall configuration to protect cardholder data.
+2. Do not use vendor-supplied defaults for system passwords and other security parameters.
+3. Protect stored cardholder data.
+4. Encrypt transmission of cardholder data across open or public networks.
+5. Protect all systems against malware and regularly update antivirus software.
+6. Develop and maintain secure systems and applications.
+7. Restrict access to cardholder data by business need to know.
+8. Identify and authenticate access to system components.
+9. Restrict physical access to cardholder data.
+10. Track and monitor all access to network resources and cardholder data.
+11. Regularly test security systems and processes.
+12. Maintain a policy that addresses information security for all personnel.
