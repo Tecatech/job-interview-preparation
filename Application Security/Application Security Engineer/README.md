@@ -100,6 +100,10 @@
       * [Storing data securely](#storing-data-securely)
       * [Annual validation](#annual-validation)
       * [The 12 requirements of PCI DSS](#the-12-requirements-of-pci-dss)
+   * [GDPR](#gdpr)
+      * [Overview](#overview)
+      * [Scope, penalties, and key definitions](#scope-penalties-and-key-definitions)
+      * [Key GDPR requirements](#key-gdpr-requirements)
 
 ## Architecture and working principles of modern web applications
 
@@ -850,3 +854,35 @@ The latest set of security standards, PCI DSS version 3.2.1, includes 12 main r
 10. Track and monitor all access to network resources and cardholder data.
 11. Regularly test security systems and processes.
 12. Maintain a policy that addresses information security for all personnel.
+
+### GDPR
+
+#### Overview
+
+The General Data Protection Regulation (GDPR) is the toughest privacy and security law in the world. Though it was drafted and passed by the European Union (EU), it imposes obligations onto organizations anywhere, so long as they target or collect data related to people in the EU. The regulation was put into effect on May 25, 2018. The GDPR will levy harsh fines against those who violate its privacy and security standards, with penalties reaching into tens of millions of euros.
+
+With the GDPR, Europe is signaling its firm stance on data privacy and security at a time when more people are entrusting their personal data with cloud services and breaches are a daily occurrence. The regulation itself is large, far-reaching, and fairly light on specifics, making GDPR compliance a daunting prospect, particularly for Small and Medium-sized Enterprises (SMEs).
+
+#### Scope, penalties, and key definitions
+
+The GDPR defines an array of legal terms at length. Below are some of the most important ones that we refer to:
+
+* Personal data – personal data is any information that relates to an individual who can be directly or indirectly identified. Names and email addresses are obviously personal data. Location information, ethnicity, gender, biometric data, religious beliefs, web cookies, and political opinions can also be personal data. Pseudonymous data can also fall under definition if it is relatively easy to ID someone from it.
+* Data processing – any action performed on data, whether automated or manual. Examples cited in the text include collecting, recording, organizing, structuring, storing, using, and erasing.
+* Data subject – the person whose data is processed. These are your customers or site visitors.
+* Data controller – the person who decides why and how personal data will be processed. If you are an owner or employee in your organization who handles data, this is you.
+* Data processor – a third party that processes personal data on behalf of a data controller. The GDPR has special rules for these individuals and organizations. They could include cloud servers like Tresorit or email service providers like Proton Mail.
+
+#### Key GDPR requirements
+
+If you process data, you have to do so according to seven protection and accountability principles:
+
+1. Lawfulness, fairness and transparency – processing must be lawful, fair, and transparent to the data subject.
+2. Purpose limitation – you must process data for legitimate purposes specified explicitly to the data subject when you collected it.
+3. Data minimization – you should collect and process only as much data as absolutely necessary for the purposes specified.
+4. Accuracy – you must keep personal data accurate and up to date.
+5. Storage limitation – you may only store personally identifying data for as long as necessary for the specified purpose.
+6. Integrity and confidentiality – processing must be done in such a way as to ensure appropriate security, integrity, and confidentiality (e.g. by using encryption).
+7. Accountability – the data controller is responsible for being able to demonstrate GDPR compliance with all of these principles.
+
+![alt text](https://github.com/Tecatech/job-interview-preparation/blob/main/Application%20Security/Application%20Security%20Engineer/images/key_gdpr_requirements.png)
