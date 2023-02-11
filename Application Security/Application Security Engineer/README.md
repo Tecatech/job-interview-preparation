@@ -97,7 +97,7 @@
    * [PCI DSS](#pci-dss)
       * [Overview](#overview)
       * [Handling card data](#handling-card-data)
-      * [Storing card data securely](#storing-card-data-securely)
+      * [Storing data securely](#storing-data-securely)
       * [Annual validation](#annual-validation)
       * [The 12 requirements of PCI DSS](#the-12-requirements-of-pci-dss)
 
@@ -766,9 +766,7 @@ ISO/IEC 27001 is a worldwide-recognized standard providing requirements for the 
 The following steps need to be applied and continually repeated to establish, monitor, maintain and improve an ISMS:
 
 * identify information assets and their associated information security requirements, while considering legal, regulatory, and contractual requirements;
-* assess information security risks and treat information security risks, including:
-  * a risk analysis and risks evaluation;
-  * application of appropriate controls and risks acceptance;
+* assess information security risks and treat information security risks, including application of appropriate controls and risk acceptance;
 * select and implement relevant controls to manage unacceptable risks: controls can be selected from ISO/IEC 27002 and all ISO/IEC 27002 sector-specific standards, e.g. ISO/IEC 27019 for the energy sector;
 * monitor, maintain and improve effectiveness of controls associated with organization information assets.
 
