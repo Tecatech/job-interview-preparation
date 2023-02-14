@@ -104,6 +104,38 @@
       * [Overview](#overview-5)
       * [Scope, penalties, and key definitions](#scope-penalties-and-key-definitions)
       * [Key GDPR requirements](#key-gdpr-requirements)
+* [Information security frameworks](#information-security-frameworks)
+   * [SAML](#saml)
+      * [Overview](#overview-6)
+      * [Key SAML components](#key-saml-components)
+      * [Logging in to a web-based application using IdP initiated SAML authentication](#logging-in-to-a-web-based-application-using-idp-initiated-saml-authentication)
+      * [Logging in to a web-based application using SP initiated SAML authentication](#logging-in-to-a-web-based-application-using-sp-initiated-saml-authentication)
+   * [OAuth](#oauth)
+      * [Overview](#overview-7)
+      * [OAuth roles](#oauth-roles)
+      * [Abstract protocol flow](#abstract-protocol-flow)
+      * [Application registration](#application-registration)
+      * [Authorization grant](#authorization-grant)
+    * [WS-Security](#ws-security)
+      * [Overview](#overview-8)
+      * [Securing Web services](#securing-web-services)
+      * [Transport-level security](#transport-level-security)
+      * [Application-level security](#application-level-security)
+      * [Web service security requirements](#web-service-security-requirements)
+    * [X.509](#x509)
+      * [Overview](#overview-9)
+      * [X.509 digital certificate](#x509-digital-certificate)
+      * [Working principle](#working-principle)
+      * [Checking valid secure connection](#checking-valid-secure-connection)
+    * [JAAS](#jaas)
+      * [Overview](#overview-10)
+      * [Core classes](#core-classes)
+      * [Subject and principal classes](#subject-and-principal-classes)
+      * [Subject authentication](#subject-authentication)
+    * [SSL/TLS](#ssltls)
+      * [Overview](#overview-11)
+      * [Working principle](#working-principle-2)
+      * [SSL/TLS certificates](#ssltls-certificates)
 
 ## Architecture and working principles of modern web applications
 
@@ -167,7 +199,7 @@ While it uses a file-system to process static content, dynamic content is proces
 
 NGINX is another popular web server that operates on an event-driven model wherein thousands of requests are processed within a single thread, delivering more with minimal resources. It uses PHP to serve static resources and serves static content two times faster than Apache. Dynamic content is served via external processes. When it comes to interpreting requests, Apache passes the file system location while NGINX passes the URI. This feature extends NGINX capability as a load balancer, HTTP cache and a proxy server.
 
-While it supports Unix-based OS, Windows compatibility is limited. You can not make additional configurations. Smaller codebase offers better security. Dynamic modules are not supported. Along with mailing lists and IRC, Forum is available too.
+While it supports Unix-based OS, Windows compatibility is limited. You cannot make additional configurations. Smaller codebase offers better security. Dynamic modules are not supported. Along with mailing lists and IRC, Forum is available too.
 
 NGINX has an edge over Apache as it serves as a web server as well as a proxy server. The event-driven approach that processes thousands of requests in a single thread offers greater performance, speed and cost-effectiveness.
 
@@ -272,7 +304,7 @@ While designing multiserver architecture, organizations can either connect multi
 
 A monolithic architecture is a traditional software development model – also known as web development architecture – wherein the entire software is developed as a single piece of code going through a traditional waterfall model. It means all components are interdependent and interconnected, and every component is required to run the application. To change or update a specific feature, you need to change the entire code to be rewritten and compiled.
 
-As monolithic architecture treats the entire code as a single program, building a new project, applying frameworks, scripts and templates and testing it becomes simple and easy. Deployment is easy as well. However, as the code grows bigger, it becomes difficult to manage or make updates; for even a small change, you need to go through the entire process of your web development architecture. As each element is interdependent, it is not easy to scale the application. Moreover, it is not reliable, as a single point of failure can bring down the application.
+As monolithic architecture treats the entire code as a single program, building a new project, applying frameworks, scripts and templates and testing it becomes simple and easy. Deployment is easy as well. However, as the code grows bigger, it becomes difficult to manage or make updates – for even a small change, you need to go through the entire process of your web development architecture. As each element is interdependent, it is not easy to scale the application. Moreover, it is not reliable, as a single point of failure can bring down the application.
 
 When you want to build a lightweight application and when you are on a tight budget, monolithic architecture will serve the purpose. However, it makes sense to use a monolithic model when your development team is working from a single location and not spread remotely.
 
@@ -318,7 +350,7 @@ With hybrid and multi-cloud environments increasingly becoming popular, adapting
 
 #### Immutable infrastructure
 
-Simply put, immutable infrastructure is something that can not be changed once deployed. It enables administrators to automatically provision resources using code. When servers are to be updated or modified, they are automatically replaced by newer ones.
+Simply put, immutable infrastructure is something that cannot be changed once deployed. It enables administrators to automatically provision resources using code. When servers are to be updated or modified, they are automatically replaced by newer ones.
 
 Configuration drift is a big challenge in mutable infrastructure. Scaling and debugging issues while replicating the production environment adds up to this challenge. Immutable infrastructure uses a validated and version-controlled image to provision new servers for every deployment. So, previous state of the server is not a concern. You can test servers before deploying them. It eliminates configuration drifts, allows horizontal scaling while offering simple rollback and recovery with consistent staging environments.
 
@@ -398,7 +430,7 @@ However, it must be noted that the principle is not something that can be used t
 
 #### Explicit dependencies principle
 
-Strong inter-module dependencies are regarded as an indicator of poor software design. Tightly coupled systems, in which modules have excessive dependencies, are difficult to work with as different modules can not be studied easily in isolation, and revisions or extensions to functionality can not be added. Identifying architectural dependencies proactively in the development life cycle along with metrics leads to better communication of architecture quality.
+Strong inter-module dependencies are regarded as an indicator of poor software design. Tightly coupled systems, in which modules have excessive dependencies, are difficult to work with as different modules cannot be studied easily in isolation, and revisions or extensions to functionality cannot be added. Identifying architectural dependencies proactively in the development life cycle along with metrics leads to better communication of architecture quality.
 
 If a component or class relies on other components to accomplish its operations, then other components are known as the dependencies for this class. Classes or components can have both implicit or explicit dependencies.
 
@@ -816,7 +848,7 @@ PCI DSS is the global security standard for all entities that store, process, or
 
 PCI DSS compliance involves three main components:
 
-1. Handling ingress of credit card data from customers; namely, that sensitive card details are collected and transmitted securely.
+1. Handling ingress of credit card data from customers – namely, that sensitive card details are collected and transmitted securely.
 2. Storing data securely, which is outlined in the 12 security domains of the PCI standard, such as encryption, ongoing monitoring, and security testing of access to card data.
 3. Validating annually that required security controls are in place, which can include forms, questionnaires, external vulnerability scanning services, and third-party audits.
 
@@ -886,3 +918,340 @@ If you process data, you have to do so according to seven protection and account
 7. Accountability – the data controller is responsible for being able to demonstrate GDPR compliance with all of these principles.
 
 ![alt text](https://github.com/Tecatech/job-interview-preparation/blob/main/Application%20Security/Application%20Security%20Engineer/images/key_gdpr_requirements.jpg)
+
+## Information security frameworks
+
+### SAML
+
+#### Overview
+
+The Security Assertion Markup Language (SAML) protocol authenticates users to web-based applications. SAML is a protocol frequently used in Single Sign-On (SSO) solutions to provide users easy access to their web-based applications.
+
+#### Key SAML components
+
+There are two roles in SAML authentication workflow: Identity Provider (IdP) and Service Provider (SP). The identity provider performs authentication and authorization – it makes sure users are who they say they are and grants access to resources. The service provider is web-based application.
+
+An XML document called a SAML assertion shares information between the IdP and the SP. The SAML assertion lets the SP know it came from a trusted identity provider and provides information about users and how they should be logged in to the SP. IdPs and SPs each have their own specifications as to what the SAML assertion needs to contain and how it should be formatted. IT administrators configure specifications during setup process.
+
+#### Logging in to a web-based application using IdP initiated SAML authentication
+
+1. A user enters their credentials in the IdP.
+2. The IdP authenticates and authorizes the user.
+3. After logging in, the user navigates to a list of web-based applications they can access, and selects one they want to use.
+4. When the user clicks on a web-based application, the IdP sends a SAML assertion to the SP.
+5. The SP receives the SAML assertion and does a few things:
+   1. The SP checks to make sure the assertion is valid and authentic.
+   2. The SP finds out who the user is and how they should be logged in.
+6. The SP gives the user access to the application without requiring them to log in again.
+
+#### Logging in to a web-based application using SP initiated SAML authentication
+
+1. A user navigates to a web-based application login page and enters their username.
+2. The SP behavior varies, but many detect that SAML SSO is involved, and redirect the user to an IdP login page.
+3. The user enters their credentials on the IdP login page.
+4. The IdP authenticates and authorizes the user, then sends a SAML assertion back to the SP with information it needs.
+5. The user is redirected back to the SP with access to the application.
+
+### OAuth
+
+#### Overview
+
+OAuth 2 is an authorization framework that enables applications – such as Facebook, GitHub, and DigitalOcean – to obtain limited access to user accounts on an HTTP service. It works by delegating user authentication to the service that hosts a user account and authorizing third-party applications to access that user account. OAuth 2 provides authorization flows for web and desktop applications, as well as mobile devices.
+
+This informational guide is geared towards application developers, and provides an overview of OAuth 2 roles, authorization grant types, use cases, and flows.
+
+#### OAuth roles
+
+OAuth defines four roles:
+
+* Resource owner: user who authorizes an application to access the account. Application access to the user account is limited to the scope of authorization granted (e.g. read or write access).
+* Client: application that wants to access the user account. Before it may do so, it must be authorized by the user, and the authorization must be validated by the API.
+* Resource server: hosts the protected user accounts.
+* Authorization server: verifies identity of the user, then issues access tokens to the application.
+
+From an application developer point of view, a service API fulfills both resource and authorization server roles. We will refer to both of these roles combined, as the Service or the API role.
+
+#### Abstract protocol flow
+
+![alt text](https://github.com/Tecatech/job-interview-preparation/blob/main/Application%20Security/Application%20Security%20Engineer/images/abstract_protocol_flow.png)
+
+Here is a more detailed explanation of steps in the diagram:
+
+1. Application requests authorization to access service resources from user.
+2. If the user authorized the request, the application receives an authorization grant.
+3. The application requests an access token from authorization server (API) by presenting authentication of its own identity, and authorization grant.
+4. If application identity is authenticated and the authorization grant is valid, the authorization server (API) issues an access token to the application.
+5. The application requests the resource from resource server (API) and presents an access token for authentication.
+6. If the access token is valid, the resource server (API) serves the resource to the application.
+
+Actual flow of this process will differ depending on authorization grant type in use, but this is the general idea.
+
+#### Application registration
+
+Before using OAuth with your application, you must register your application with the service. This is done through a registration form in the developer or API portion of service website, where you will provide the following information (and probably details about your application):
+
+* Application name
+* Application website
+* Redirect URI or callback URL
+
+The redirect URI is where the service will redirect users after they authorize (or deny) your application, and therefore part of your application that will handle authorization codes or access tokens.
+
+Once your application is registered, the service will issue client credentials in the form of a client identifier and a client secret. Client ID is a publicly exposed string that is used by the service API to identify the application, and is also used to build authorization URLs that are presented to users. Client secret is used to authenticate application identity to the service API when the application requests to access a user account, and must be kept private between the application and the API.
+
+#### Authorization grant
+
+In the abstract protocol flow outlined previously, the first four steps cover obtaining an authorization grant and access token. Authorization grant type depends on a method used by an application to request authorization, and grant types supported by the API. OAuth 2 defines three primary grant types, each of which is useful in different cases:
+
+* Authorization code: used with server-side applications.
+* Client credentials: used with applications that have API access.
+* Device code: used for devices that lack browsers or have input limitations.
+
+### WS-Security
+
+#### Overview
+
+Companies worldwide are actively deploying Service-Oriented Architectures (SOA) using Web services, both in intranet and internet environments. While Web services offer many advantages over traditional alternatives (for example, distributed objects or custom software), deploying networks of interconnected Web services still presents key challenges, particularly in terms of security and administration.
+
+#### Securing Web services
+
+Because of its nature (loosely coupled connections) and its use of open access (mainly HTTP), SOA implemented by Web services adds a new set of requirements to the security landscape. Web services security includes several aspects:
+
+* Authentication – verifying that user is who she claims to be. A user identity is verified based on credentials presented by that user, such as:
+  1. Something one has, for example, credentials issued by a trusted authority such as a passport (real world) or a smart card (IT world).
+  2. Something one knows, for example, a shared secret such as a password.
+* Authorization (or access control) – granting access to specific resources based on an authenticated user entitlements. Entitlements are defined by one or several attributes.
+* Confidentiality, privacy – keeping information secret. Accesses a message, for example a Web service request or an email, as well as the identity of sending and receiving parties in a confidential manner. Confidentiality and privacy can be achieved by encrypting the content of a message and obfuscating sending and receiving parties identities.
+* Integrity, non-repudiation – making sure that a message remains unaltered during transit by having the sender digitally sign the message. A digital signature is used to validate the signature and provides non-repudiation. The timestamp in the signature prevents anyone from replaying this message after expiration.
+
+Using a combination of several types of credentials is referred to as «strong» authentication, for example, using an ATM card (something one has) with a PIN or password (something one knows).
+
+Web services security requirements also involve credential mediation (exchanging security tokens in a trusted environment), and service capabilities and constraints (defining what a Web service can do, under what circumstances).
+
+In many cases, Web services security tools such as Oracle WSM rely on Public Key Infrastructure (PKI) environments. A PKI uses cryptographic keys (mathematical functions used to encrypt or decrypt data). Keys can be private or public. In an asymmetric cipher model, the receiving party public key is used to encrypt plaintext, and the receiving party matching private key is used to decrypt ciphertext. Also, a private key is used to create a digital signature by signing the message, and the public key is used for verifying the signature. Public-key certificates (or certificates, for short) are used to guarantee integrity of public keys.
+
+Web services security requirements are supported by industry standards both at the transport level (Secure Sockets Layer) and at the application level, relying on XML frameworks.
+
+#### Transport-level security
+
+Secure Sockets Layer (SSL), otherwise known as Transport Layer Security (TLS), the Internet Engineering Task Force (IETF) officially standardized version of SSL, is the most widely used transport-level data-communication protocol providing:
+
+* Authentication (the communication is established between two trusted parties).
+* Confidentiality (the data exchanged is encrypted).
+* Message integrity (the data is checked for possible corruption).
+* Secure key exchange between client and server.
+
+SSL provides a secure communication channel, however, when data is not in transit, it is not protected. This makes the environment vulnerable to attacks in multistep transactions.
+
+#### Application-level security
+
+Data confidentiality is implemented by XML encryption. XML encryption defines how digital content is encrypted and decrypted, how encryption key information is passed to a recipient, and how encrypted data is identified to facilitate decryption.
+
+Data integrity and authenticity are implemented by XML signature. XML signature binds sender identity (or signing entity) to an XML document. Signing and signature verification can be done using asymmetric or symmetric keys.
+
+Signature ensures non-repudiation of the signing entity and proves that messages have not been altered since they were signed. Message structure and message security are implemented by SOAP and its security extension, WS-Security. WS-Security defines how to attach XML signature and XML encryption headers to SOAP messages. In addition, WS-Security provides profiles for five security tokens: username (with password digest), X.509 certificate, Kerberos ticket, Security Assertion Markup Language (SAML) assertion, and REL (rights markup) document.
+
+The SOAP envelope body includes a business payload, for example a purchase order, a financial document, or simply a call to another Web service. SAML is one of the most interesting security tokens because it supports both authentication and authorization. SAML is an open framework for sharing security information on the Internet through XML documents.
+
+#### Web service security requirements
+
+The following summarize Web service security requirements:
+
+1. Use of transport security to protect communication channel between Web service consumer and Web service provider.
+2. Message-level security to ensure confidentiality by digitally encrypting message parts, integrity using digital signatures, and authentication by requiring username, X.509, or SAML tokens.
+
+### X.509
+
+#### Overview
+
+X.509 is a standard format for public key certificates, digital documents that securely associate cryptographic key pairs with identities such as websites, individuals, or organizations.
+
+First introduced in 1988 alongside the X.500 standards for electronic directory services, X.509 has been adapted for internet use by the IETF Public Key Infrastructure (X.509) working group. RFC 5280 profiles the X.509 v3 certificate, the X.509 v2 Certificate Revocation List (CRL), and describes an algorithm for X.509 certificate path validation.
+
+Common applications of X.509 certificates include:
+
+* SSL/TLS and HTTPS for authenticated and encrypted web browsing
+* Signed and encrypted email via the S/MIME protocol
+* Code signing
+* Document signing
+* Client authentication
+* Government-issued electronic ID
+
+#### X.509 digital certificate
+
+SSL/TLS X.509 certificates are digital files that are used for Secure Sockets Layer (SSL) or Transport Layer Security (TLS). An SSL/TLS certificate is one of the most popular types of X.509 certificates, or a type of public-key certificate which uses the X.509 standard. X.509 certificates contain a public key and identity of a hostname, organization, or individual.
+
+The SSL/TLS certificate fulfills two functions as machine identities: authentication and data encryption.
+
+First, a certificate can assist with authenticating and verifying the identity of a host or site. SSL certificate has information about authenticity of details around identity of a host or site. So, when you click on padlock displayed or check trust mark, the certificate chain details prove where the certificate is generated from.
+
+Second, it enables encryption of information exchanged via a website. When you encrypt data in transit, it that sensitive information exchanged via the website cannot be intercepted and read by anyone other than the intended recipient.
+
+An SSL/TLS certificate is most reliable when issued by a trusted Certificate Authority (CA). The CA has to follow very strict rules and policies about who may or may not receive an SSL certificate. So, when you have a valid SSL certificate from a trusted CA, there is a higher degree of trust. When a Certificate Authority (CA) signs them or another entity validates them, the owner of that certificate can leverage the public key to establish secure connections with another party or validate documents someone digitally signed using the corresponding private key.
+
+Some of X.509 SSL/TLS certificates are self-signed. And these certificates will not be trusted for public-facing applications. Because of this, they are mainly used to encrypt and authenticate data within an organization network.
+
+SSL/TLS certificates are X.509 certificates with extended key usage: server authentication. The «extended key usage» extension lists «roles» for the entity that uses the certificate. In other words, an entity must use SSL/TLS certificates only for server authentication and nothing else. Otherwise, that entity risks violating issued CA policies.
+
+#### Working principle
+
+As SSL/TLS certificates enable encryption, they are integral to HyperText Transfer Protocol Secure (HTTPS), a protocol that encrypts all communication exchanged between a website and your browser.
+
+* HTTPS starts when a browser requests a secure page.
+* The web server responds with its public key and its certificate.
+* The browser then verifies a trusted authority or CA issued this digital file.
+* Assuming that is the case, the browser uses the web server public key to encrypt a random symmetric encryption key and sends it to the server with an encrypted URL and other encrypted HTTP data.
+* If the public key is valid, the web server uses its private key to decrypt the symmetric encryption key, URL, and HTTP data before sending over HTML document and HTTP data now encrypted with the symmetric key.
+* This symmetric key, in turn, allows the browser to decrypt HTTP data and display it to the user.
+
+![alt text](https://github.com/Tecatech/job-interview-preparation/blob/main/Application%20Security/Application%20Security%20Engineer/images/summary_of_ssl_handshake.png)
+
+#### Checking valid secure connection
+
+A standard website without SSL/TLS security displays «HTTP» at the beginning of the website address in the browser address bar. This stands for «Hypertext Transfer Protocol», and is a conventional way to transmit information over the Internet. On the other hand, a website that is secured with an SSL certificate will have «HTTPS» before address. This stands for «HyperText Transfer Protocol Secure».
+
+Every browser has a slightly different way of displaying secure connections. But for all of them, you can check that a website you are visiting is using HTTPS by looking for «HTTPS» in the address bar.
+
+Some browsers may also feature a padlock symbol next to the website address. If you click on that symbol, your web browser should display the name of the organization that owns SSL/TLS certificate. That symbol turns green when your web browser detects an Extended Validation (EV) SSL certificate. If the information does not match, or the certificate has expired, the browser displays an error message or warning. In addition, many browsers now flag all sites using HTTP as insecure.
+
+If the certificate has expired, the web browser will display an error message or warning. These alerts could lead a visitor to navigate away from a website. To prevent this from happening, organizations that own websites and use HTTPS need to manage their certificates and make sure the ones they want to keep do not expire.
+
+### JAAS
+
+#### Overview
+
+The JAAS 1.0 API consists of a set of Java packages designed for user authentication and authorization. The API implements a Java version of the standard Pluggable Authentication Modules (PAM) framework and extends Java 2 platform access control architecture to support user-based authorization.
+
+JAAS authentication is performed in a pluggable fashion. This permits Java applications to remain independent of underlying authentication technologies, and allows security manager to work in different security infrastructures. Integration with a security infrastructure is achievable without changing the security manager implementation. You need only change configuration of authentication stack JAAS uses.
+
+#### Core classes
+
+The JAAS core classes can be broken down into three categories: common, authentication, and authorization. The following list presents only common and authentication classes because these are the specific classes:
+
+Common classes:
+* `Subject` (`javax.security.auth.Subject`)
+
+Authentication classes:
+* `Configuration` (`javax.security.auth.login.Configuration`)
+* `LoginContext` (`javax.security.auth.login.LoginContext`)
+
+Associated interfaces:
+* `Principal` (`java.security.Principal`)
+* `Callback` (`javax.security.auth.callback.Callback`)
+* `CallbackHandler` (`javax.security.auth.callback.CallbackHandler`)
+* `LoginModule` (`javax.security.auth.spi.LoginModule`)
+
+#### Subject and principal classes
+
+To authorize access to resources, applications must first authenticate the request source. JAAS framework defines a term subject to represent a request source. `Subject` class is the central class in JAAS. A `Subject` represents information for a single entity, such as a person or service. It encompasses entity principals, public credentials, and private credentials. JAAS APIs use the existing Java 2 `java.security.Principal` interface to represent a principal, which is essentially just a typed name. During the authentication process, a subject is populated with associated identities, or principals. A subject may have many principals.
+
+Note that `java.security.acl.Group` interface is a sub-interface of `java.security.Principal`, so an instance in the principals set may represent a logical grouping of other principals or groups of principals.
+
+#### Subject authentication
+
+Subject authentication requires a JAAS log in. Log in process consists of the following points:
+
+1. An application instantiates a `LoginContext` and passes in the name of the login configuration and a `CallbackHandler` to populate `Callback` objects, as required by configuration `LoginModule`s.
+2. `LoginContext` consults a `Configuration` to load all `LoginModule`s included in named login configuration. If no such named configuration exists, `other` configuration is used as a default.
+3. The application invokes `LoginContext.login` method.
+4. Login method invokes all the loaded `LoginModule`s. As each `LoginModule` attempts to authenticate the subject, it invokes the handle method on associated `CallbackHandler` to obtain the information required for the authentication process. Required information is passed to the handle method in a form of an array of `Callback` objects. Upon success, `LoginModule`s associate relevant principals and credentials with subject.
+5. `LoginContext` returns authentication status to the application. Success is represented by a return from the log in method. Failure is represented through a LoginException being thrown by the log in method.
+6. If authentication succeeds, the application retrieves the authenticated subject using the `LoginContext.getSubject` method.
+7. After scope of the subject authentication is complete, all principals and related information associated with the subject by the log in method can be removed by invoking the `LoginContext.logout` method.
+
+The `LoginContext` class provides basic methods for authenticating subjects and offers a way to develop an application that is independent of the underlying authentication technology. `LoginContext` consults a `Configuration` to determine authentication services configured for a particular application. `LoginModule` classes represent authentication services. Therefore, you can plug different login modules into an application without changing the application itself. The following code shows the steps required by an application to authenticate a subject.
+
+```java
+CallbackHandler handler = new MyHandler();
+LoginContext lc = new LoginContext("some-config", handler);
+
+try {
+    lc.login();
+    Subject subject = lc.getSubject();
+} catch (LoginException e) {
+    System.out.println("authentication failed");
+    e.printStackTrace();
+}
+
+// Perform work as authenticated Subject
+
+// Scope of work complete, logout to remove authentication information
+try {
+    lc.logout();
+} catch (LoginException e) {
+    System.out.println("logout failed");
+    e.printStackTrace();
+}
+
+// A sample MyHandler class
+class MyHandler
+    implements CallbackHandler
+{
+    public void handle(Callback[] callbacks) throws
+        IOException, UnsupportedCallbackException
+    {
+        for (int i = 0; i < callbacks.length; i++) {
+            if (callbacks[i] instanceof NameCallback) {
+                NameCallback nc = (NameCallback)callbacks[i];
+                nc.setName(username);
+            } else if (callbacks[i] instanceof PasswordCallback) {
+                PasswordCallback pc = (PasswordCallback)callbacks[i];
+                pc.setPassword(password);
+            } else {
+                throw new UnsupportedCallbackException(callbacks[i],
+                                                       "Unrecognized callback");
+            }
+        }
+    }
+}
+```
+
+### SSL/TLS
+
+#### Overview
+
+SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are popular cryptographic protocols that are used to imbue web communications with integrity, security, and resilience against unauthorized tampering. PKI uses the TLS protocol to establish secure connections between clients and servers over the Internet, ensuring that information relayed is encrypted and unable to be read by an external third party.
+
+Note: SSL was the predecessor of TLS, and the world began moving away from SSL once TLS was introduced in 1999, thanks to improved security features of the latter. TLS is currently in its third iteration, and is called TLS 1.3. However, SSL continues to be used as a metonymy for both protocols in general (for example, the word «SSL certificate» is widely used, but SSL has been completely deprecated, and no modern systems support SSL anymore).
+
+Connections that are secured by TLS will indicate their secure status by displaying HTTPS (HyperText Transfer Protocol Secure) in the address bar of web browsers, as opposed to just HTTP.
+
+While TLS is primarily used to secure client-server connection, it is also used to protect emails, VoIP calls, and other connections.
+
+In theory, web connections are completely possible without TLS to secure them. However, without a security protocol in place, communication would be rendered completely open to external access. If a browser connected to a website of an online store, and a user had to enter their credentials to log in, those credentials could easily be lifted by an observing party.
+
+TLS, at its core, serves to provide end-to-end encryption for all data transmitted from one point to another, and uses cryptography to ensure that only two transacting bodies are capable of reading this information. Every service in the world now mandates that connections are secure by TLS – leading browsers do not allow users to access websites without a valid TLS connection.
+
+TLS has the following benefits:
+
+* The contents of the connection remain encrypted, private, and fully secure – and cannot be easily deciphered by malicious actors.
+* The connection is only made if it is reliable – this reliability check is a part of TLS communications, and is enforced by the exchange of a Message Authentication Code (MAC).
+* The use of PKI and TLS certificates ensures that identities of both communicating parties are verified.
+
+#### Working principle
+
+When two systems that leverage TLS attempt to connect, each system will make an effort to verify that the other supports TLS. This process is called the TLS handshake, and it is here that both parties decide upon the TLS version, encryption algorithm, cipher suite. That will be used in the procedure. Once a TLS handshake has been successfully executed, both systems start exchanging data on a secure line.
+
+Note: A working knowledge of PKI and its constituents, such as keys, may prove to be useful prior to understanding TLS. For now, all you need to know is that encryption and decryption are carried out with help of cryptographic devices called keys. In public key cryptography, Public keys are used to encrypt information, while secret Private keys can be used to decrypt that information. Since two different keys are involved, this technique is called «asymmetric cryptography», as opposed to «symmetric cryptography», where a single key can perform both encryption and decryption. More on this below.
+
+Every TLS handshake follows the same basic steps. For the sake of simplicity, let's assume a browser (a client) is attempting to connect to a server, which hosts a website:
+
+* The client requests the server to open a secure line, and the server responds by displaying a list of TLS versions and cipher suites it is compatible with. Once they agree upon common ones to use in the transaction, they begin the handshake.
+* The server sends a copy of its public key, attached to its digital certificate, to the client. The client checks the certificate to verify that the server is legitimate, and if it is, proceeds with the transaction.
+* The client uses the server public key and its private key to encrypt a «session key», which is a key that will be used by both parties to encrypt and decrypt information in this particular session. The session key becomes invalid as soon as the connection is terminated.
+* Both parties test the connection by sending each other encrypted messages. If the other can decrypt them using the session key, the connection has been successfully secured.
+
+The above example was an instance where both asymmetric and symmetric encryption was used to secure a connection.
+
+Asymmetric encryption was used to create the session key. But from that point onwards, the session key was used to bilaterally encrypt and decrypt the entire information flow between both parties.
+
+Asymmetric encryption is mathematically resource-intensive. Encryption-decryption operations involving two keys from both parties takes a heavy toll on the processing unit powering this process. If a system were configured to handle an entire connection this way – by using a public key to encrypt and a private key to decrypt it – it would probably give out within the first few minutes. It is much more secure than its symmetric counterpart, but cannot be facilitated efficiently.
+
+However, symmetric encryption, which makes use of a single, shared key to encrypt and decrypt, is not that resource-intensive. This is precisely why asymmetric encryption is used to establish a secure link between two parties, and used to generate the session key which, in theory, only those two parties can possibly know about. Now, symmetric encryption can be used to secure the connection, given the additional layer of security added to it by the first step.
+
+#### SSL/TLS certificates
+
+In general, digital certificates are digital documents that are «signed» by trusted authorities, and act as documents of ownership of a public key. By extension, they serve to validate the legitimacy of a server or a client. However, there are several types of digital certificates available. The term «X.509 certificates» is used to differentiate SSL/TLS certificates with other kinds of digital certificates (code-signing certificates, for instance).
+
+Digital certificates are important pieces in the public key cryptography domain. They are attached to public keys, and are proof that the holder of the public key is actually the legitimate owner. This is because digital certificates are signed, sold, and issued by bodies called «Certificate Authorities» (or CAs, for short), which are trusted bodies responsible for verifying the authenticity of anyone who requests a certificate. Since major operating systems and browsers have «trust stores» consisting of these CAs built into them, browsers will automatically trust certificates issued by major CAs.
+
+Certificates are key to making websites easily recognizable to users as a trusted, secure page. Webpages with valid SSL/TLS certificates installed on them will have «HTTPS» preceding the name of the website in the search bar, given that certificate has been installed correctly. In some browsers, the use of a valid extended validation certificates (a type of TLS certificate), will cause the HTTPS padlock to turn green, providing visitors with additional assurance that they are on a legitimate website.
