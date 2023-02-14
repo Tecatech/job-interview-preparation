@@ -940,8 +940,8 @@ An XML document called a SAML assertion shares information between the IdP and t
 3. After logging in, the user navigates to a list of web-based applications they can access, and selects one they want to use.
 4. When the user clicks on a web-based application, the IdP sends a SAML assertion to the SP.
 5. The SP receives the SAML assertion and does a few things:
-1. The SP checks to make sure the assertion is valid and authentic.
-2. The SP finds out who the user is and how they should be logged in.
+   1. The SP checks to make sure the assertion is valid and authentic.
+   2. The SP finds out who the user is and how they should be logged in.
 6. The SP gives the user access to the application without requiring them to log in again.
 
 #### Logging in to a web-based application using SP initiated SAML authentication
@@ -1017,8 +1017,8 @@ Companies worldwide are actively deploying Service-Oriented Architectures (SOA) 
 Because of its nature (loosely coupled connections) and its use of open access (mainly HTTP), SOA implemented by Web services adds a new set of requirements to the security landscape. Web services security includes several aspects:
 
 * Authentication – verifying that user is who she claims to be. A user identity is verified based on credentials presented by that user, such as:
-1. Something one has, for example, credentials issued by a trusted authority such as a passport (real world) or a smart card (IT world).
-2. Something one knows, for example, a shared secret such as a password.
+  1. Something one has, for example, credentials issued by a trusted authority such as a passport (real world) or a smart card (IT world).
+  2. Something one knows, for example, a shared secret such as a password.
 * Authorization (or access control) – granting access to specific resources based on an authenticated user entitlements. Entitlements are defined by one or several attributes.
 * Confidentiality, privacy – keeping information secret. Accesses a message, for example a Web service request or an email, as well as the identity of sending and receiving parties in a confidential manner. Confidentiality and privacy can be achieved by encrypting the content of a message and obfuscating sending and receiving parties identities.
 * Integrity, non-repudiation – making sure that a message remains unaltered during transit by having the sender digitally sign the message. A digital signature is used to validate the signature and provides non-repudiation. The timestamp in the signature prevents anyone from replaying this message after expiration.
@@ -1107,7 +1107,7 @@ As SSL/TLS certificates enable encryption, they are integral to HyperText Transf
 
 #### Checking valid secure connection
 
-A standard website without SSL/TLS security displays «HTTP» at the beginning of the website address in the browser address bar. This stands for «Hypertext Transfer Protocol», and is a conventional way to transmit information over the Internet. On the other hand, a website that is secured with an SSL certificate will have «HTTPS» before address. This stands for «HyperText Transfer Protocol Secure».
+A standard website without SSL/TLS security displays «HTTP» at the beginning of the website address in the browser address bar. This stands for «HyperText Transfer Protocol», and is a conventional way to transmit information over the Internet. On the other hand, a website that is secured with an SSL certificate will have «HTTPS» before address. This stands for «HyperText Transfer Protocol Secure».
 
 Every browser has a slightly different way of displaying secure connections. But for all of them, you can check that a website you are visiting is using HTTPS by looking for «HTTPS» in the address bar.
 
