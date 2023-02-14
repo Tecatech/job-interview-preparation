@@ -134,7 +134,7 @@
       * [Subject authentication](#subject-authentication)
     * [SSL/TLS](#ssltls)
       * [Overview](#overview-11)
-      * [Working principle](#working-principle-2)
+      * [Working principle](#working-principle-1)
       * [SSL/TLS certificates](#ssltls-certificates)
 
 ## Architecture and working principles of modern web applications
@@ -940,8 +940,8 @@ An XML document called a SAML assertion shares information between the IdP and t
 3. After logging in, the user navigates to a list of web-based applications they can access, and selects one they want to use.
 4. When the user clicks on a web-based application, the IdP sends a SAML assertion to the SP.
 5. The SP receives the SAML assertion and does a few things:
-   1. The SP checks to make sure the assertion is valid and authentic.
-   2. The SP finds out who the user is and how they should be logged in.
+1. The SP checks to make sure the assertion is valid and authentic.
+2. The SP finds out who the user is and how they should be logged in.
 6. The SP gives the user access to the application without requiring them to log in again.
 
 #### Logging in to a web-based application using SP initiated SAML authentication
@@ -1017,8 +1017,8 @@ Companies worldwide are actively deploying Service-Oriented Architectures (SOA) 
 Because of its nature (loosely coupled connections) and its use of open access (mainly HTTP), SOA implemented by Web services adds a new set of requirements to the security landscape. Web services security includes several aspects:
 
 * Authentication – verifying that user is who she claims to be. A user identity is verified based on credentials presented by that user, such as:
-  1. Something one has, for example, credentials issued by a trusted authority such as a passport (real world) or a smart card (IT world).
-  2. Something one knows, for example, a shared secret such as a password.
+1. Something one has, for example, credentials issued by a trusted authority such as a passport (real world) or a smart card (IT world).
+2. Something one knows, for example, a shared secret such as a password.
 * Authorization (or access control) – granting access to specific resources based on an authenticated user entitlements. Entitlements are defined by one or several attributes.
 * Confidentiality, privacy – keeping information secret. Accesses a message, for example a Web service request or an email, as well as the identity of sending and receiving parties in a confidential manner. Confidentiality and privacy can be achieved by encrypting the content of a message and obfuscating sending and receiving parties identities.
 * Integrity, non-repudiation – making sure that a message remains unaltered during transit by having the sender digitally sign the message. A digital signature is used to validate the signature and provides non-repudiation. The timestamp in the signature prevents anyone from replaying this message after expiration.
@@ -1231,7 +1231,7 @@ TLS has the following benefits:
 
 When two systems that leverage TLS attempt to connect, each system will make an effort to verify that the other supports TLS. This process is called the TLS handshake, and it is here that both parties decide upon the TLS version, encryption algorithm, cipher suite. That will be used in the procedure. Once a TLS handshake has been successfully executed, both systems start exchanging data on a secure line.
 
-Note: A working knowledge of PKI and its constituents, such as keys, may prove to be useful prior to understanding TLS. For now, all you need to know is that encryption and decryption are carried out with help of cryptographic devices called keys. In public key cryptography, Public keys are used to encrypt information, while secret Private keys can be used to decrypt that information. Since two different keys are involved, this technique is called «asymmetric cryptography», as opposed to «symmetric cryptography», where a single key can perform both encryption and decryption. More on this below.
+Note: a working knowledge of PKI and its constituents, such as keys, may prove to be useful prior to understanding TLS. For now, all you need to know is that encryption and decryption are carried out with help of cryptographic devices called keys. In public key cryptography, Public keys are used to encrypt information, while secret Private keys can be used to decrypt that information. Since two different keys are involved, this technique is called «asymmetric cryptography», as opposed to «symmetric cryptography», where a single key can perform both encryption and decryption. More on this below.
 
 Every TLS handshake follows the same basic steps. For the sake of simplicity, let's assume a browser (a client) is attempting to connect to a server, which hosts a website:
 
